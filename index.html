@@ -5,9 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Zhixiao Yu | 用户研究员 & 体验设计师</title>
     
-    <!-- 引入 Tailwind CSS 进行极速原子化布局，契合 Apple 设计规范 -->
     <script src="https://cdn.tailwindcss.com"></script>
-    <!-- 配置 Tailwind -->
     <script>
         tailwind.config = {
             theme: {
@@ -107,7 +105,6 @@
 </head>
 <body class="font-sans antialiased text-apple-text selection:bg-apple-blue selection:text-white relative is-loading">
 
-    <!-- 导航栏 (Sticky + Blur) -->
     <nav class="fixed top-0 w-full z-40 bg-white/70 backdrop-blur-xl border-b border-apple-border/50 transition-all duration-300" id="navbar">
         <div class="max-w-7xl mx-auto px-6 md:px-12 lg:px-24">
             <div class="flex items-center justify-between h-16">
@@ -125,9 +122,7 @@
     </nav>
 
     <main class="w-full">
-        <!-- 首页 Hero Section -->
         <section id="home" class="min-h-screen flex flex-col justify-center items-center text-center px-6 pt-20 relative overflow-hidden">
-            <!-- 极简背景点缀 (Parallax 视差滚动容器) -->
             <div class="absolute inset-0 overflow-hidden pointer-events-none -z-10">
                 <div class="parallax-el w-[800px] h-[800px] bg-gradient-to-tr from-apple-blue/10 to-transparent rounded-full blur-3xl absolute top-1/4 left-1/4" data-speed="0.25"></div>
             </div>
@@ -148,7 +143,6 @@
                     专注于用户行为研究与体验系统设计，通过数据分析与设计方法的结合，<br class="hidden md:block">构建从用户洞察到产品与服务体验落地的完整设计路径。
                 </p>
                 
-                <!-- 能力标签阵列 -->
                 <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mt-12 text-left max-w-3xl mx-auto">
                     <div class="bg-white p-4 rounded-xl shadow-apple-card border border-white/50 backdrop-blur-sm skeleton-target">
                         <div class="text-apple-blue mb-2">
@@ -187,7 +181,6 @@
             </div>
         </section>
 
-        <!-- 关于 About Section -->
         <section id="about" class="py-32 px-6 md:px-12 lg:px-24 bg-white relative overflow-hidden">
             <div class="absolute inset-0 pointer-events-none overflow-hidden">
                 <div class="parallax-el w-[600px] h-[600px] bg-gradient-to-bl from-apple-blue/5 to-transparent rounded-full blur-3xl absolute -bottom-1/4 -right-1/4" data-speed="0.15"></div>
@@ -256,7 +249,6 @@
             </div>
         </section>
 
-        <!-- 核心亮点：AI 驱动研究工作流 -->
         <section id="workflow" class="py-32 px-6 md:px-12 lg:px-24 bg-[#1D1D1F] text-white">
             <div class="max-w-7xl mx-auto fade-in-up">
                 <div class="text-center mb-16">
@@ -267,7 +259,6 @@
                 <div class="relative">
                     <div class="absolute top-1/2 left-0 w-full h-0.5 bg-[#333336] -translate-y-1/2 hidden lg:block"></div>
                     <div class="grid grid-cols-1 lg:grid-cols-5 gap-8 relative z-10">
-                        <!-- Steps -->
                         <div class="bg-[#2C2C2E] p-6 rounded-2xl border border-[#3A3A3C] hover:border-apple-blue transition-colors relative">
                             <div class="w-8 h-8 rounded-full bg-apple-blue text-white flex items-center justify-center text-[14px] font-bold mb-6 lg:mx-auto">1</div>
                             <h4 class="text-[16px] font-semibold mb-2 lg:text-center">行业信息与竞品分析</h4>
@@ -298,7 +289,6 @@
             </div>
         </section>
 
-        <!-- 作品集 Portfolio Section -->
         <section id="portfolio" class="py-32 px-6 md:px-12 lg:px-24">
             <div class="max-w-7xl mx-auto fade-in-up">
                 <div class="flex justify-between items-end mb-16 skeleton-target">
@@ -306,7 +296,6 @@
                 </div>
 
                 <div class="grid md:grid-cols-2 gap-8">
-                    <!-- Project Card 1 -->
                     <div class="group cursor-pointer bg-white rounded-2xl overflow-hidden shadow-apple-card hover:shadow-apple-card-hover transition-all duration-500 transform hover:-translate-y-1 skeleton-target" onclick="openProjectModal('case1')">
                        <div class="h-64 bg-[#E5E5EA] relative overflow-hidden">
                             <img src="./images/cur1.png" alt="中韩邮轮封面" class="w-full h-full object-cover">
@@ -318,7 +307,6 @@
                         </div>
                     </div>
 
-                    <!-- Project Card 2 (NDA) -->
                     <div class="group cursor-pointer bg-white rounded-2xl overflow-hidden shadow-apple-card hover:shadow-apple-card-hover transition-all duration-500 transform hover:-translate-y-1 skeleton-target" onclick="openProjectModal('case2')">
                         <div class="h-64 bg-[#1D1D1F] relative overflow-hidden flex items-center justify-center">
                             <div class="text-white/30 font-medium tracking-widest text-lg">NDA PROTECTED</div>
@@ -330,7 +318,6 @@
                         </div>
                     </div>
 
-                    <!-- Project Card 3 -->
                     <div class="group cursor-pointer bg-white rounded-2xl overflow-hidden shadow-apple-card hover:shadow-apple-card-hover transition-all duration-500 transform hover:-translate-y-1 skeleton-target" onclick="openProjectModal('case3')">
                         <div class="h-64 bg-[#E5E5EA] relative overflow-hidden">
                             <img src="./images/yuan.11.png" alt="元游项目封面" class="w-full h-full object-cover">
@@ -342,7 +329,6 @@
                         </div>
                     </div>
 
-                    <!-- Project Card 4 -->
                     <div class="group cursor-pointer bg-white rounded-2xl overflow-hidden shadow-apple-card hover:shadow-apple-card-hover transition-all duration-500 transform hover:-translate-y-1 skeleton-target" onclick="openProjectModal('case4')">
                         <div class="h-64 bg-[#E5E5EA] relative overflow-hidden">
                             <img src="./images/yuanyou2.png" alt="FigPals封面" class="w-full h-full object-cover">
@@ -357,7 +343,6 @@
             </div>
         </section>
 
-        <!-- 学术与研究 Research Section -->
         <section id="research" class="py-32 px-6 md:px-12 lg:px-24 bg-white">
             <div class="max-w-4xl mx-auto fade-in-up">
                 <h3 class="text-[32px] font-bold mb-12 border-b border-apple-border pb-6">Research & Academic</h3>
@@ -373,7 +358,6 @@
             </div>
         </section>
 
-        <!-- 简历与联系 Resume & Contact Section -->
         <section id="resume" class="py-32 px-6 md:px-12 lg:px-24 bg-apple-bg">
             <div class="max-w-4xl mx-auto grid md:grid-cols-2 gap-16 fade-in-up">
                 <div>
@@ -437,22 +421,19 @@
             </div>
         </section>
 
-        <!-- Footer -->
         <footer class="py-8 text-center text-[13px] text-apple-subtext border-t border-apple-border bg-white">
             <p>&copy; 2026 Zhixiao Yu. All rights reserved. Designed with precision.</p>
         </footer>
     </main>
 
-    <!-- 项目详情页 Modal -->
-    <div id="project-modal" class="fixed inset-0 z-50 bg-[#1D1D1F] hidden opacity-0 transition-opacity duration-500">
-        <button onclick="closeProjectModal()" class="absolute top-8 right-8 z-50 w-12 h-12 bg-black/50 backdrop-blur-md rounded-full flex items-center justify-center text-white hover:bg-black/80 transition-colors shadow-sm border border-white/10">
+    <div id="project-modal" class="fixed inset-0 z-50 bg-white hidden opacity-0 transition-opacity duration-500">
+        <button onclick="closeProjectModal()" class="absolute top-8 right-8 z-50 w-12 h-12 bg-white/50 backdrop-blur-md rounded-full flex items-center justify-center text-apple-text hover:bg-gray-100 transition-colors shadow-sm border border-apple-border">
             <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
         </button>
         <div id="modal-content" class="snap-y-container no-scrollbar relative w-full h-full">
         </div>
     </div>
 
-    <!-- 研究成果详情页 Modal -->
     <div id="research-modal" class="fixed inset-0 z-50 bg-[#F5F5F7] hidden opacity-0 transition-opacity duration-500 overflow-y-auto">
         <button onclick="closeResearchModal()" class="fixed top-8 right-8 z-50 w-12 h-12 bg-white/80 backdrop-blur-md rounded-full flex items-center justify-center text-apple-text hover:bg-gray-100 transition-colors shadow-sm border border-apple-border">
             <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
@@ -500,7 +481,6 @@
         </div>
     </div>
 
-    <!-- 全局图片放大镜 Lightbox Modal -->
     <div id="lightbox-modal" class="fixed inset-0 z-[60] bg-black/95 hidden flex-col items-center justify-center opacity-0 transition-opacity duration-300" onclick="closeLightbox()">
         <button class="absolute top-8 right-8 z-50 text-white/50 hover:text-white transition-colors p-2">
             <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
@@ -509,7 +489,6 @@
         </div>
     </div>
 
-    <!-- JS 逻辑 -->
     <script>
         function initApp() {
             setTimeout(() => {
@@ -570,10 +549,10 @@
                 themeColor: "from-blue-50 to-indigo-50",
                 slides: [
                     { type: 'Cover', label: '01 / 封面', title: "中韩邮轮内装设计调研", desc: "User Research & Spatial Experience Design", isDark: false, image: "cur1.png" },
-                    { type: 'Background', label: '02 / 项目背景', title: "属地分析与文化语境", desc: "分析中韩航线特定文化背景下，属地文化对游客体验偏好的影响。", isDark: true, carouselCount: 2 },
+                    { type: 'Background', label: '02 / 项目背景', title: "属地分析与文化语境", desc: "分析中韩航线特定文化背景下，属地文化对游客体验偏好的影响。", isDark: false, carouselCount: 2 },
                     { type: 'Research', label: '03 / 用户研究', title: "客群分析与用户分层", desc: "进行深层桌面研究，构建航线客群的基础行为画像与分层模型。", isDark: false, carouselCount: 2 },
                     { type: 'Insight', label: '04 / 洞察分析', title: "需求转化图谱", desc: "将抽象的文化属性与体验诉求，映射为具体的空间需求指标。", isDark: false, image: "cur8.png" },
-                    { type: 'Strategy', label: '05 / 设计策略', title: "基于数据的空间叙事", desc: "提出以故事化为核心的内装设计指导策略。", isDark: true, image: "cur6.png" },
+                    { type: 'Strategy', label: '05 / 设计策略', title: "基于数据的空间叙事", desc: "提出以故事化为核心的内装设计指导策略。", isDark: false, image: "cur6.png" },
                     { type: 'Solution', label: '06 / 方案展示', title: "体验原型构建", desc: "输出符合目标客群偏好的核心区域体验原型与服务触点设计。", isDark: false, image: "case1-ppt6.jpg" }
                 ]
             },
@@ -581,7 +560,7 @@
                 title: "房地产高净值用户需求洞察",
                 themeColor: "from-gray-900 to-black",
                 slides: [
-                    { type: 'Cover', label: 'CONFIDENTIAL', title: "房地产高净值用户洞察", desc: "保密项目-暂时不予公开展示，可联系本人交流方法论", isDark: true, hideVisual: true }
+                    { type: 'Cover', label: 'CONFIDENTIAL', title: "房地产高净值用户洞察", desc: "保密项目-暂时不予公开展示，可联系本人交流方法论", isDark: false, hideVisual: true }
                 ]
             },
             'case3': {
@@ -590,10 +569,10 @@
                 slides: [
                     { type: 'Cover', label: '01 / 封面', title: "《元游》数字平台", desc: "传统文化体验产品设计 (省级大创项目)", isDark: false, carouselCount: 3 },
                     { type: 'Background', label: '02 / 项目背景', title: "文化传承的数字化困境", desc: "解决传统文化在年轻群体中传播力弱、体验形式单一的问题。", isDark: false, carouselCount: 3 },
-                    { type: 'Research', label: '03 / 竞品与研究', title: "Z世代体验偏好洞察", desc: "分析现有文创产品痛点，确立“沉浸式+轻游戏化”的方向。", isDark: true, carouselCount: 3 },
+                    { type: 'Research', label: '03 / 竞品与研究', title: "Z世代体验偏好洞察", desc: "分析现有文创产品痛点，确立“沉浸式+轻游戏化”的方向。", isDark: false, carouselCount: 3 },
                     { type: 'Strategy', label: '04 / 商业模式', title: "商业模式画布设计", desc: "构建以内容共创与线下实体联动为核心的可持续商业闭环。", isDark: false, carouselCount: 3 },
                     { type: 'Solution', label: '05 / 产品设计', title: "系统与交互逻辑", desc: "梳理产品信息架构，设计无缝衔接的线上线下任务流。", isDark: false, carouselCount: 3 },
-                    { type: 'Visual', label: '06 / 界面设计', title: "APP 原型构建", desc: "完成符合现代审美且蕴含东方意境的高保真界面设计。", isDark: true, carouselCount: 3 },
+                    { type: 'Visual', label: '06 / 界面设计', title: "APP 原型构建", desc: "完成符合现代审美且蕴含东方意境的高保真界面设计。", isDark: false, carouselCount: 3 },
                     { type: 'Outcome', label: '07 / 完整项目', title: "完整项目展示", desc: "完整的产品设计方案与商业计划书，成功结项。", isDark: false, carouselCount: 4 }
                 ]
             },
@@ -602,10 +581,10 @@
                 themeColor: "from-blue-50 to-indigo-100",
                 slides: [
                     { type: 'Cover', label: '01 / 封面', title: "Figma FigPals 研究", desc: "针对协作生态微互动的行为模式分析。", isDark: false, image: "yuanyou1.png" },
-                    { type: 'Background', label: '02 / 研究背景', title: "协作工具的社交维度", desc: "探究设计工具中轻量级互动(FigPals)如何影响团队协作效率与情感联结。", isDark: true, carouselCount: 4 },
+                    { type: 'Background', label: '02 / 研究背景', title: "协作工具的社交维度", desc: "探究设计工具中轻量级互动(FigPals)如何影响团队协作效率与情感联结。", isDark: false, carouselCount: 4 },
                     { type: 'Method', label: '03 / 研究方法', title: "实验设计与行为观察", desc: "60位受试者随机抽取分组，进行模拟操作实验，记录实验过程特殊行为与时间。", isDark: false, carouselCount: 6 },
                     { type: 'Insight', label: '04 / 实验与洞察', title: "微互动的核心痛点", desc: "挖掘用户在协同作业时未被满足的隐性社交与情绪表达诉求。", isDark: false, carouselCount: 3 },
-                    { type: 'Outcome', label: '05 / 研究成果', title: "行为模式洞察报告", desc: "输出指导后续协作功能迭代的用户体验升级策略。", isDark: true, carouselCount: 10 }
+                    { type: 'Outcome', label: '05 / 研究成果', title: "行为模式洞察报告", desc: "输出指导后续协作功能迭代的用户体验升级策略。", isDark: false, carouselCount: 10 }
                 ]
             }
         };
@@ -672,19 +651,18 @@
                 const backgroundStyle = index === 0 && !isDark ? `bg-gradient-to-br ${data.themeColor}` : (isDark ? 'bg-[#1D1D1F]' : 'bg-[#F5F5F7]');
 
                 let visualHtml = '';
-                let bgImageUrl = ''; // 魔法：用于提取当前 PPT 当作背景大图
+                let bgImageUrl = ''; // 提取当前 PPT 当作背景大图
 
                 if (slide.hideVisual) {
                     visualHtml = '';
                 } else if (slide.carouselCount && slide.carouselCount > 1) {
-                    // ★ 修复：将这里的滑动图后缀强行改为 .png
+                    // 滑动图强制匹配 .png
                     bgImageUrl = `./images/${projectId}-slide${index + 1}-1.png`; 
                     
                     let carouselItems = '';
                     for (let i = 0; i < slide.carouselCount; i++) {
                         carouselItems += `
                         <div class="snap-center shrink-0 w-full aspect-video rounded-2xl overflow-hidden relative shadow-2xl ${isDark ? 'bg-[#2C2C2E]' : 'bg-[#F5F5F7] border border-gray-100'} flex items-center justify-center cursor-zoom-in hover:opacity-90 transition-opacity border border-apple-border/20 group" onclick="openLightbox(this)">
-                           <!-- ★ 修复：自动加载的也是 .png -->
                            <img src="./images/${projectId}-slide${index + 1}-${i + 1}.png" alt="Slide ${index + 1} Image ${i + 1}" class="absolute inset-0 w-full h-full object-cover bg-white">
                         </div>`;
                     }
@@ -699,7 +677,6 @@
                         </div>
                     </div>`;
                 } else {
-                    // 单图提取背景
                     if (slide.image) bgImageUrl = `./images/${slide.image}`;
                     
                     visualHtml = `
@@ -709,23 +686,18 @@
                     `;
                 }
 
-                // ★ 高能：注入毛玻璃背景层
                 htmlString += `
                     <section class="snap-section flex items-center justify-center relative p-8 md:p-24 overflow-hidden ${textClass}">
                         
-                        <!-- 沉浸式氛围背景 -->
                         ${bgImageUrl ? `
                         <div class="absolute inset-0 z-0 pointer-events-none select-none overflow-hidden">
-                            <!-- 放大且极度模糊的底图 (增加饱和度和亮度，让光晕更明显) -->
-                            <img src="${bgImageUrl}" class="w-full h-full object-cover scale-[1.5] blur-[80px] opacity-70 saturate-150">
-                            <!-- 半透明遮罩层 (调低不透明度，让底色透出来) -->
-                            <div class="absolute inset-0 ${isDark ? 'bg-[#1D1D1F]/60' : 'bg-white/60'} backdrop-blur-2xl"></div>
+                            <img src="${bgImageUrl}" class="w-full h-full object-cover scale-[1.5] blur-[80px] opacity-100 saturate-200 brightness-110">
+                            <div class="absolute inset-0 ${isDark ? 'bg-[#1D1D1F]/50' : 'bg-white/50'} backdrop-blur-[30px]"></div>
                         </div>
                         ` : `
                         <div class="absolute inset-0 z-0 ${backgroundStyle}"></div>
                         `}
 
-                        <!-- 前景内容层 (z-10) -->
                         <div class="max-w-5xl w-full flex flex-col md:flex-row gap-12 items-center relative z-10">
                             <div class="flex-1 space-y-6 ${slide.hideVisual ? 'text-center max-w-3xl mx-auto' : ''}">
                                 <div class="text-[14px] font-bold tracking-widest uppercase text-apple-blue mb-4">
