@@ -5,28 +5,31 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Zhixiao Yu | 用户研究员 & 体验设计师</title>
     
+    <!-- 引入 Tailwind CSS 进行极速原子化布局，契合 Apple 设计规范 -->
     <script src="https://cdn.tailwindcss.com"></script>
+    <!-- 配置 Tailwind -->
     <script>
         tailwind.config = {
             theme: {
                 extend: {
                     colors: {
                         apple: {
-                            bg: '#F5F5F7',
-                            card: '#FFFFFF',
-                            text: '#1D1D1F',
-                            subtext: '#6E6E73',
-                            blue: '#007AFF',
-                            blueHover: '#0066CC',
-                            border: '#E5E5E5'
+                                bg: '#F5F5F7',
+                                card: '#FFFFFF',
+                                text: '#1D1D1F',
+                                subtext: '#6E6E73',
+                                blue: '#007AFF',
+                                blueHover: '#0066CC',
+                                border: '#E5E5E5'
+                            }
+                        },
+                        fontFamily: {
+                            sans: ['"SF Pro Display"', '"SF Pro Text"', '"PingFang SC"', '"Helvetica Neue"', 'Helvetica', 'Arial', 'sans-serif'],
+                        },
+                        boxShadow: {
+                            'apple-card': '0 1px 3px rgba(0, 0, 0, 0.05), 0 1px 2px rgba(0, 0, 0, 0.1)',
+                            'apple-card-hover': '0 10px 20px rgba(0, 0, 0, 0.08), 0 4px 8px rgba(0, 0, 0, 0.04)',
                         }
-                    },
-                    fontFamily: {
-                        sans: ['"SF Pro Display"', '"SF Pro Text"', '"PingFang SC"', '"Helvetica Neue"', 'Helvetica', 'Arial', 'sans-serif'],
-                    },
-                    boxShadow: {
-                        'apple-card': '0 1px 3px rgba(0, 0, 0, 0.05), 0 1px 2px rgba(0, 0, 0, 0.1)',
-                        'apple-card-hover': '0 10px 20px rgba(0, 0, 0, 0.08), 0 4px 8px rgba(0, 0, 0, 0.04)',
                     }
                 }
             }
@@ -104,6 +107,7 @@
 </head>
 <body class="font-sans antialiased text-apple-text selection:bg-apple-blue selection:text-white relative is-loading">
 
+    <!-- 导航栏 (Sticky + Blur) -->
     <nav class="fixed top-0 w-full z-40 bg-white/70 backdrop-blur-xl border-b border-apple-border/50 transition-all duration-300" id="navbar">
         <div class="max-w-7xl mx-auto px-6 md:px-12 lg:px-24">
             <div class="flex items-center justify-between h-16">
@@ -121,7 +125,9 @@
     </nav>
 
     <main class="w-full">
+        <!-- 首页 Hero Section -->
         <section id="home" class="min-h-screen flex flex-col justify-center items-center text-center px-6 pt-20 relative overflow-hidden">
+            <!-- 极简背景点缀 (Parallax 视差滚动容器) -->
             <div class="absolute inset-0 overflow-hidden pointer-events-none -z-10">
                 <div class="parallax-el w-[800px] h-[800px] bg-gradient-to-tr from-apple-blue/10 to-transparent rounded-full blur-3xl absolute top-1/4 left-1/4" data-speed="0.25"></div>
             </div>
@@ -142,6 +148,7 @@
                     专注于用户行为研究与体验系统设计，通过数据分析与设计方法的结合，<br class="hidden md:block">构建从用户洞察到产品与服务体验落地的完整设计路径。
                 </p>
                 
+                <!-- 能力标签阵列 -->
                 <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mt-12 text-left max-w-3xl mx-auto">
                     <div class="bg-white p-4 rounded-xl shadow-apple-card border border-white/50 backdrop-blur-sm skeleton-target">
                         <div class="text-apple-blue mb-2">
@@ -180,6 +187,7 @@
             </div>
         </section>
 
+        <!-- 关于 About Section -->
         <section id="about" class="py-32 px-6 md:px-12 lg:px-24 bg-white relative overflow-hidden">
             <div class="absolute inset-0 pointer-events-none overflow-hidden">
                 <div class="parallax-el w-[600px] h-[600px] bg-gradient-to-bl from-apple-blue/5 to-transparent rounded-full blur-3xl absolute -bottom-1/4 -right-1/4" data-speed="0.15"></div>
@@ -248,6 +256,7 @@
             </div>
         </section>
 
+        <!-- 核心亮点：AI 驱动研究工作流 -->
         <section id="workflow" class="py-32 px-6 md:px-12 lg:px-24 bg-[#1D1D1F] text-white">
             <div class="max-w-7xl mx-auto fade-in-up">
                 <div class="text-center mb-16">
@@ -258,6 +267,7 @@
                 <div class="relative">
                     <div class="absolute top-1/2 left-0 w-full h-0.5 bg-[#333336] -translate-y-1/2 hidden lg:block"></div>
                     <div class="grid grid-cols-1 lg:grid-cols-5 gap-8 relative z-10">
+                        <!-- Steps -->
                         <div class="bg-[#2C2C2E] p-6 rounded-2xl border border-[#3A3A3C] hover:border-apple-blue transition-colors relative">
                             <div class="w-8 h-8 rounded-full bg-apple-blue text-white flex items-center justify-center text-[14px] font-bold mb-6 lg:mx-auto">1</div>
                             <h4 class="text-[16px] font-semibold mb-2 lg:text-center">行业信息与竞品分析</h4>
@@ -288,6 +298,7 @@
             </div>
         </section>
 
+        <!-- 作品集 Portfolio Section -->
         <section id="portfolio" class="py-32 px-6 md:px-12 lg:px-24">
             <div class="max-w-7xl mx-auto fade-in-up">
                 <div class="flex justify-between items-end mb-16 skeleton-target">
@@ -295,6 +306,7 @@
                 </div>
 
                 <div class="grid md:grid-cols-2 gap-8">
+                    <!-- Project Card 1 -->
                     <div class="group cursor-pointer bg-white rounded-2xl overflow-hidden shadow-apple-card hover:shadow-apple-card-hover transition-all duration-500 transform hover:-translate-y-1 skeleton-target" onclick="openProjectModal('case1')">
                        <div class="h-64 bg-[#E5E5EA] relative overflow-hidden">
                             <img src="./images/cur1.png" alt="中韩邮轮封面" class="w-full h-full object-cover">
@@ -306,6 +318,7 @@
                         </div>
                     </div>
 
+                    <!-- Project Card 2 (NDA) -->
                     <div class="group cursor-pointer bg-white rounded-2xl overflow-hidden shadow-apple-card hover:shadow-apple-card-hover transition-all duration-500 transform hover:-translate-y-1 skeleton-target" onclick="openProjectModal('case2')">
                         <div class="h-64 bg-[#1D1D1F] relative overflow-hidden flex items-center justify-center">
                             <div class="text-white/30 font-medium tracking-widest text-lg">NDA PROTECTED</div>
@@ -317,6 +330,7 @@
                         </div>
                     </div>
 
+                    <!-- Project Card 3 -->
                     <div class="group cursor-pointer bg-white rounded-2xl overflow-hidden shadow-apple-card hover:shadow-apple-card-hover transition-all duration-500 transform hover:-translate-y-1 skeleton-target" onclick="openProjectModal('case3')">
                         <div class="h-64 bg-[#E5E5EA] relative overflow-hidden">
                             <img src="./images/yuan.11.png" alt="元游项目封面" class="w-full h-full object-cover">
@@ -328,6 +342,7 @@
                         </div>
                     </div>
 
+                    <!-- Project Card 4 -->
                     <div class="group cursor-pointer bg-white rounded-2xl overflow-hidden shadow-apple-card hover:shadow-apple-card-hover transition-all duration-500 transform hover:-translate-y-1 skeleton-target" onclick="openProjectModal('case4')">
                         <div class="h-64 bg-[#E5E5EA] relative overflow-hidden">
                             <img src="./images/yuanyou2.png" alt="FigPals封面" class="w-full h-full object-cover">
@@ -342,6 +357,7 @@
             </div>
         </section>
 
+        <!-- 学术与研究 Research Section -->
         <section id="research" class="py-32 px-6 md:px-12 lg:px-24 bg-white">
             <div class="max-w-4xl mx-auto fade-in-up">
                 <h3 class="text-[32px] font-bold mb-12 border-b border-apple-border pb-6">Research & Academic</h3>
@@ -357,6 +373,7 @@
             </div>
         </section>
 
+        <!-- 简历与联系 Resume & Contact Section -->
         <section id="resume" class="py-32 px-6 md:px-12 lg:px-24 bg-apple-bg">
             <div class="max-w-4xl mx-auto grid md:grid-cols-2 gap-16 fade-in-up">
                 <div>
@@ -420,19 +437,22 @@
             </div>
         </section>
 
+        <!-- Footer -->
         <footer class="py-8 text-center text-[13px] text-apple-subtext border-t border-apple-border bg-white">
             <p>&copy; 2026 Zhixiao Yu. All rights reserved. Designed with precision.</p>
         </footer>
     </main>
 
-    <div id="project-modal" class="fixed inset-0 z-50 bg-white hidden opacity-0 transition-opacity duration-500">
-        <button onclick="closeProjectModal()" class="absolute top-8 right-8 z-50 w-12 h-12 bg-white/50 backdrop-blur-md rounded-full flex items-center justify-center text-apple-text hover:bg-gray-100 transition-colors shadow-sm">
+    <!-- 项目详情页 Modal -->
+    <div id="project-modal" class="fixed inset-0 z-50 bg-[#1D1D1F] hidden opacity-0 transition-opacity duration-500">
+        <button onclick="closeProjectModal()" class="absolute top-8 right-8 z-50 w-12 h-12 bg-black/50 backdrop-blur-md rounded-full flex items-center justify-center text-white hover:bg-black/80 transition-colors shadow-sm border border-white/10">
             <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
         </button>
-        <div id="modal-content" class="snap-y-container no-scrollbar relative w-full h-full bg-[#F5F5F7]">
+        <div id="modal-content" class="snap-y-container no-scrollbar relative w-full h-full">
         </div>
     </div>
 
+    <!-- 研究成果详情页 Modal -->
     <div id="research-modal" class="fixed inset-0 z-50 bg-[#F5F5F7] hidden opacity-0 transition-opacity duration-500 overflow-y-auto">
         <button onclick="closeResearchModal()" class="fixed top-8 right-8 z-50 w-12 h-12 bg-white/80 backdrop-blur-md rounded-full flex items-center justify-center text-apple-text hover:bg-gray-100 transition-colors shadow-sm border border-apple-border">
             <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
@@ -480,6 +500,7 @@
         </div>
     </div>
 
+    <!-- 全局图片放大镜 Lightbox Modal -->
     <div id="lightbox-modal" class="fixed inset-0 z-[60] bg-black/95 hidden flex-col items-center justify-center opacity-0 transition-opacity duration-300" onclick="closeLightbox()">
         <button class="absolute top-8 right-8 z-50 text-white/50 hover:text-white transition-colors p-2">
             <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
@@ -488,6 +509,7 @@
         </div>
     </div>
 
+    <!-- JS 逻辑 -->
     <script>
         function initApp() {
             setTimeout(() => {
@@ -644,19 +666,26 @@
             let htmlString = '';
             
             data.slides.forEach((slide, index) => {
-                const bgClass = slide.isDark ? 'bg-[#1D1D1F] text-white' : 'bg-white text-apple-text';
-                const textMutedClass = slide.isDark ? 'text-[#A1A1A6]' : 'text-apple-subtext';
-                const backgroundStyle = index === 0 && !slide.isDark ? `bg-gradient-to-br ${data.themeColor}` : bgClass;
+                const isDark = slide.isDark;
+                const textClass = isDark ? 'text-white' : 'text-apple-text';
+                const textMutedClass = isDark ? 'text-[#A1A1A6]' : 'text-apple-subtext';
+                const backgroundStyle = index === 0 && !isDark ? `bg-gradient-to-br ${data.themeColor}` : (isDark ? 'bg-[#1D1D1F]' : 'bg-[#F5F5F7]');
 
                 let visualHtml = '';
+                let bgImageUrl = ''; // 魔法：用于提取当前 PPT 当作背景大图
+
                 if (slide.hideVisual) {
                     visualHtml = '';
                 } else if (slide.carouselCount && slide.carouselCount > 1) {
+                    // ★ 修复：将这里的滑动图后缀强行改为 .png
+                    bgImageUrl = `./images/${projectId}-slide${index + 1}-1.png`; 
+                    
                     let carouselItems = '';
                     for (let i = 0; i < slide.carouselCount; i++) {
                         carouselItems += `
-                        <div class="snap-center shrink-0 w-full aspect-video rounded-2xl overflow-hidden relative shadow-2xl ${slide.isDark ? 'bg-[#2C2C2E]' : 'bg-[#F5F5F7] border border-gray-100'} flex items-center justify-center cursor-zoom-in hover:opacity-90 transition-opacity border border-apple-border/20 group" onclick="openLightbox(this)">
-                           <img src="./images/${projectId}-slide${index + 1}-${i + 1}.jpg" alt="Slide ${index + 1} Image ${i + 1}" class="absolute inset-0 w-full h-full object-cover bg-white">
+                        <div class="snap-center shrink-0 w-full aspect-video rounded-2xl overflow-hidden relative shadow-2xl ${isDark ? 'bg-[#2C2C2E]' : 'bg-[#F5F5F7] border border-gray-100'} flex items-center justify-center cursor-zoom-in hover:opacity-90 transition-opacity border border-apple-border/20 group" onclick="openLightbox(this)">
+                           <!-- ★ 修复：自动加载的也是 .png -->
+                           <img src="./images/${projectId}-slide${index + 1}-${i + 1}.png" alt="Slide ${index + 1} Image ${i + 1}" class="absolute inset-0 w-full h-full object-cover bg-white">
                         </div>`;
                     }
                     visualHtml = `
@@ -670,17 +699,35 @@
                         </div>
                     </div>`;
                 } else {
+                    // 单图提取背景
+                    if (slide.image) bgImageUrl = `./images/${slide.image}`;
+                    
                     visualHtml = `
-                        <div class="flex-1 w-full aspect-video rounded-2xl overflow-hidden relative shadow-2xl ${slide.isDark ? 'bg-[#2C2C2E]' : 'bg-[#F5F5F7] border border-gray-100'} flex items-center justify-center cursor-zoom-in hover:opacity-90 transition-opacity border border-apple-border/20 group" onclick="openLightbox(this)">
+                        <div class="flex-1 w-full aspect-video rounded-2xl overflow-hidden relative shadow-2xl ${isDark ? 'bg-[#2C2C2E]' : 'bg-[#F5F5F7] border border-gray-100'} flex items-center justify-center cursor-zoom-in hover:opacity-90 transition-opacity border border-apple-border/20 group" onclick="openLightbox(this)">
                              <img src="./images/${slide.image}" alt="PPT" class="absolute inset-0 w-full h-full object-cover bg-white">
                         </div>
                     `;
                 }
 
+                // ★ 高能：注入毛玻璃背景层
                 htmlString += `
-                    <section class="snap-section flex items-center justify-center relative p-8 md:p-24 ${backgroundStyle}">
-                        <div class="max-w-5xl w-full flex flex-col md:flex-row gap-12 items-center">
-                            <div class="flex-1 space-y-6 z-10 ${slide.hideVisual ? 'text-center max-w-3xl mx-auto' : ''}">
+                    <section class="snap-section flex items-center justify-center relative p-8 md:p-24 overflow-hidden ${textClass}">
+                        
+                        <!-- 沉浸式氛围背景 -->
+                        ${bgImageUrl ? `
+                        <div class="absolute inset-0 z-0 pointer-events-none select-none overflow-hidden">
+                            <!-- 放大且极度模糊的底图 -->
+                            <img src="${bgImageUrl}" class="w-full h-full object-cover scale-125 blur-3xl opacity-50">
+                            <!-- 半透明遮罩层 (保证文字能看清) -->
+                            <div class="absolute inset-0 ${isDark ? 'bg-[#1D1D1F]/80' : 'bg-white/80'} backdrop-blur-2xl"></div>
+                        </div>
+                        ` : `
+                        <div class="absolute inset-0 z-0 ${backgroundStyle}"></div>
+                        `}
+
+                        <!-- 前景内容层 (z-10) -->
+                        <div class="max-w-5xl w-full flex flex-col md:flex-row gap-12 items-center relative z-10">
+                            <div class="flex-1 space-y-6 ${slide.hideVisual ? 'text-center max-w-3xl mx-auto' : ''}">
                                 <div class="text-[14px] font-bold tracking-widest uppercase text-apple-blue mb-4">
                                     ${slide.label}
                                 </div>
@@ -693,8 +740,9 @@
                             </div>
                             ${visualHtml}
                         </div>
+                        
                         ${index < data.slides.length - 1 ? `
-                        <div class="absolute bottom-12 left-1/2 -translate-x-1/2 flex flex-col items-center animate-bounce ${textMutedClass}">
+                        <div class="absolute bottom-12 left-1/2 -translate-x-1/2 flex flex-col items-center animate-bounce ${textMutedClass} relative z-10">
                             <span class="text-[12px] uppercase tracking-widest mb-2">Scroll</span>
                             <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path></svg>
                         </div>
