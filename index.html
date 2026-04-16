@@ -105,7 +105,6 @@
         }
     </style>
 </head>
-<!-- 新增 is-loading 状态进行首屏预加载动效 -->
 <body class="font-sans antialiased text-apple-text selection:bg-apple-blue selection:text-white relative is-loading">
 
     <!-- 导航栏 (Sticky + Blur) -->
@@ -190,9 +189,8 @@
             </div>
         </section>
 
-        <!-- 关于 About Section -->
+        <!-- 关于 About Section (修复左右对齐版) -->
         <section id="about" class="py-32 px-6 md:px-12 lg:px-24 bg-white relative overflow-hidden">
-            <!-- 增强的视差装饰背景 -->
             <div class="absolute inset-0 pointer-events-none overflow-hidden">
                 <div class="parallax-el w-[600px] h-[600px] bg-gradient-to-bl from-apple-blue/5 to-transparent rounded-full blur-3xl absolute -bottom-1/4 -right-1/4" data-speed="0.15"></div>
                 <div class="parallax-el w-[400px] h-[400px] bg-gradient-to-tr from-gray-100 to-transparent rounded-full blur-2xl absolute top-1/4 -left-1/4" data-speed="-0.1"></div>
@@ -200,15 +198,20 @@
 
             <div class="max-w-7xl mx-auto fade-in-up relative z-10">
                 <h3 class="text-[32px] font-bold mb-16 text-center">专业能力体系</h3>
-                <div class="grid md:grid-cols-12 gap-16">
-                    <!-- 左侧：概述 -->
-                    <div class="md:col-span-5 space-y-6">
-                        <p class="text-[20px] font-medium leading-relaxed">
-                            具备用户研究、产品设计与数据分析交叉领域的实践经验，专注于复杂系统中的用户行为建模与体验优化。
-                        </p>
-                        <p class="text-[16px] text-apple-subtext leading-relaxed">
-                            在多个真实项目中完成从用户研究 → 数据分析 → 设计转化的完整链路，形成以“研究驱动设计”为核心的方法体系。
-                        </p>
+                <!-- 修改为 items-start 确保左右顶部在同一水平线起步 -->
+                <div class="grid md:grid-cols-12 gap-16 items-start">
+                    
+                    <!-- 左侧：恢复自然布局 -->
+                    <div class="md:col-span-5 space-y-12">
+                        <div class="space-y-6">
+                            <!-- 文本顶部将与右侧标题顶部完美平齐 -->
+                            <p class="text-[20px] font-medium leading-relaxed">
+                                具备用户研究、产品设计与数据分析交叉领域的实践经验，专注于复杂系统中的用户行为建模与体验优化。
+                            </p>
+                            <p class="text-[16px] text-apple-subtext leading-relaxed">
+                                在多个真实项目中完成从用户研究 → 数据分析 → 设计转化的完整链路，形成以“研究驱动设计”为核心的方法体系。
+                            </p>
+                        </div>
                         <div class="pt-8 border-t border-apple-border">
                             <h4 class="text-[14px] font-semibold text-apple-subtext uppercase tracking-wider mb-4">语言能力</h4>
                             <p class="text-[16px] font-medium">英语六级（CET-6）</p>
@@ -216,12 +219,10 @@
                         </div>
                     </div>
                     
-                    <!-- 右侧：技能矩阵 -->
-                    <div class="md:col-span-7 grid sm:grid-cols-2 gap-8">
-                        <div class="bg-apple-bg rounded-2xl p-8">
-                            <h4 class="text-[18px] font-semibold mb-6 flex items-center">
-                                <span class="w-2 h-2 rounded-full bg-apple-blue mr-3"></span>用户研究能力
-                            </h4>
+                    <!-- 右侧：剥离了灰底卡片和 Padding，实现整体上提对齐；剥离了标题圆点，实现左侧边缘完美对齐 -->
+                    <div class="md:col-span-7 grid sm:grid-cols-2 gap-x-8 gap-y-12">
+                        <div>
+                            <h4 class="text-[18px] font-semibold mb-5 text-apple-text">用户研究能力</h4>
                             <ul class="space-y-3 text-[15px] text-apple-subtext">
                                 <li>用户访谈设计与执行 (定性/定量)</li>
                                 <li>问卷设计与数据分析</li>
@@ -230,10 +231,8 @@
                                 <li>SWOT / 5W1H / 商业模式画布</li>
                             </ul>
                         </div>
-                        <div class="bg-apple-bg rounded-2xl p-8">
-                            <h4 class="text-[18px] font-semibold mb-6 flex items-center">
-                                <span class="w-2 h-2 rounded-full bg-apple-blue mr-3"></span>数据分析能力
-                            </h4>
+                        <div>
+                            <h4 class="text-[18px] font-semibold mb-5 text-apple-text">数据分析能力</h4>
                             <ul class="space-y-3 text-[15px] text-apple-subtext">
                                 <li>SPSS统计分析</li>
                                 <li>KANO-AHP-QFD 跨学科量化方法</li>
@@ -241,29 +240,26 @@
                                 <li>结构化数据分析与决策支持</li>
                             </ul>
                         </div>
-                        <div class="bg-apple-bg rounded-2xl p-8">
-                            <h4 class="text-[18px] font-semibold mb-6 flex items-center">
-                                <span class="w-2 h-2 rounded-full bg-apple-blue mr-3"></span>设计实践能力
-                            </h4>
+                        <div>
+                            <h4 class="text-[18px] font-semibold mb-5 text-apple-text">设计实践能力</h4>
                             <ul class="space-y-3 text-[15px] text-apple-subtext">
                                 <li>高级艺术审美素养</li>
                                 <li>产品设计 - 从概念到落地实现</li>
                             </ul>
                         </div>
-                        <div class="bg-apple-bg rounded-2xl p-8">
-                            <h4 class="text-[18px] font-semibold mb-6 flex items-center">
-                                <span class="w-2 h-2 rounded-full bg-apple-blue mr-3"></span>工具
-                            </h4>
+                        <div class="flex flex-col">
+                            <h4 class="text-[18px] font-semibold mb-5 text-apple-text">工具</h4>
                             <div class="flex flex-wrap gap-2">
-                                <span class="px-3 py-1 bg-white border border-apple-border rounded-lg text-[14px]">Figma</span>
-                                <span class="px-3 py-1 bg-white border border-apple-border rounded-lg text-[14px]">Rhino</span>
-                                <span class="px-3 py-1 bg-white border border-apple-border rounded-lg text-[14px]">AutoCAD</span>
-                                <span class="px-3 py-1 bg-white border border-apple-border rounded-lg text-[14px]">Photoshop</span>
-                                <span class="px-3 py-1 bg-white border border-apple-border rounded-lg text-[14px]">Illustrator</span>
-                                <span class="px-3 py-1 bg-white border border-apple-border rounded-lg text-[14px]">Xmind</span>
+                                <span class="px-3 py-1 bg-apple-bg border border-apple-border rounded-lg text-[14px]">Figma</span>
+                                <span class="px-3 py-1 bg-apple-bg border border-apple-border rounded-lg text-[14px]">Rhino</span>
+                                <span class="px-3 py-1 bg-apple-bg border border-apple-border rounded-lg text-[14px]">AutoCAD</span>
+                                <span class="px-3 py-1 bg-apple-bg border border-apple-border rounded-lg text-[14px]">Photoshop</span>
+                                <span class="px-3 py-1 bg-apple-bg border border-apple-border rounded-lg text-[14px]">Illustrator</span>
+                                <span class="px-3 py-1 bg-apple-bg border border-apple-border rounded-lg text-[14px]">Xmind</span>
                             </div>
                         </div>
                     </div>
+
                 </div>
             </div>
         </section>
@@ -325,7 +321,6 @@
 
                 <div class="grid md:grid-cols-2 gap-8">
                     <!-- Project Card 1 -->
-                    <!-- 移除了内部卡片的 parallax 视差属性，确保项目卡片始终保持严格网格对齐 -->
                     <div class="group cursor-pointer bg-white rounded-2xl overflow-hidden shadow-apple-card hover:shadow-apple-card-hover transition-all duration-500 transform hover:-translate-y-1 skeleton-target" onclick="openProjectModal('case1')">
                         <div class="h-64 bg-[#E5E5EA] relative overflow-hidden">
                             <!-- 占位图，采用极简渐变与图案 -->
@@ -434,7 +429,6 @@
                             </div>
                         </div>
 
-                        <!-- 移除了此处的顶边框线 (border-t) 和过大的 pt-8，使其更加紧凑 -->
                         <div class="mt-6">
                             <button class="flex items-center justify-center w-full bg-apple-blue hover:bg-apple-blueHover text-white px-6 py-3 rounded-xl text-[15px] font-medium transition-colors">
                                 <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"></path></svg>
@@ -632,7 +626,6 @@
             'case3': {
                 title: "《元游》传统文化体验平台",
                 themeColor: "from-blue-50 to-cyan-50",
-                // 给 case3 每页加上 carouselCount 属性，触发横向滚动多图渲染
                 slides: [
                     { type: 'Cover', label: '01 / 封面', title: "《元游》数字平台", desc: "传统文化体验产品设计 (省级大创项目)", isDark: false, carouselCount: 3 },
                     { type: 'Background', label: '02 / 项目背景', title: "文化传承的数字化困境", desc: "解决传统文化在年轻群体中传播力弱、体验形式单一的问题。", isDark: false, carouselCount: 3 },
