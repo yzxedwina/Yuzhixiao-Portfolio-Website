@@ -322,11 +322,9 @@
                 <div class="grid md:grid-cols-2 gap-8">
                     <!-- Project Card 1 -->
                     <div class="group cursor-pointer bg-white rounded-2xl overflow-hidden shadow-apple-card hover:shadow-apple-card-hover transition-all duration-500 transform hover:-translate-y-1 skeleton-target" onclick="openProjectModal('case1')">
-                        <div class="h-64 bg-[#E5E5EA] relative overflow-hidden">
-                            <!-- 占位图，采用极简渐变与图案 -->
-                            <div class="absolute inset-0 bg-gradient-to-br from-gray-100 to-gray-200"></div>
-                            <div class="absolute inset-0 flex items-center justify-center text-gray-400 font-light text-[14px]">Spatial Experience Visual</div>
-                        </div>
+                       <div class="h-64 bg-[#E5E5EA] relative overflow-hidden">
+    <img src="./images/cur1.png" alt="中韩邮轮封面" class="w-full h-full object-cover">
+</div>
                         <div class="p-8">
                             <div class="text-[12px] font-semibold text-apple-blue tracking-wider uppercase mb-2">User Research / Spatial Experience</div>
                             <h4 class="text-[24px] font-semibold mb-4 group-hover:text-apple-blue transition-colors">中韩邮轮内装设计调研</h4>
@@ -348,10 +346,9 @@
 
                     <!-- Project Card 3 -->
                     <div class="group cursor-pointer bg-white rounded-2xl overflow-hidden shadow-apple-card hover:shadow-apple-card-hover transition-all duration-500 transform hover:-translate-y-1 skeleton-target" onclick="openProjectModal('case3')">
-                        <div class="h-64 bg-[#F2F2F7] relative overflow-hidden">
-                             <div class="absolute inset-0 bg-gradient-to-tr from-blue-50 to-indigo-50"></div>
-                             <div class="absolute inset-0 flex items-center justify-center text-blue-200 font-light text-[14px]">App Interface Mockup</div>
-                        </div>
+                        <div class="h-64 bg-[#E5E5EA] relative overflow-hidden">
+    <img src="./images/yuan.11.png" alt="元游项目封面" class="w-full h-full object-cover">
+</div>
                         <div class="p-8">
                             <div class="text-[12px] font-semibold text-apple-blue tracking-wider uppercase mb-2">Product & UI/UX Design</div>
                             <h4 class="text-[24px] font-semibold mb-4 group-hover:text-apple-blue transition-colors">《元游》传统文化体验平台</h4>
@@ -361,9 +358,9 @@
 
                     <!-- Project Card 4 -->
                     <div class="group cursor-pointer bg-white rounded-2xl overflow-hidden shadow-apple-card hover:shadow-apple-card-hover transition-all duration-500 transform hover:-translate-y-1 skeleton-target" onclick="openProjectModal('case4')">
-                        <div class="h-64 bg-[#E5E5EA] relative overflow-hidden flex items-center justify-center">
-                            <span class="text-apple-blue/50 font-bold text-4xl tracking-widest">Figma</span>
-                        </div>
+                        <div class="h-64 bg-[#E5E5EA] relative overflow-hidden">
+    <img src="./images/yuanyou2.png" alt="FigPals封面" class="w-full h-full object-cover">
+</div>
                         <div class="p-8">
                             <div class="text-[12px] font-semibold text-apple-blue tracking-wider uppercase mb-2">Behavioral Research</div>
                             <h4 class="text-[24px] font-semibold mb-4 group-hover:text-apple-blue transition-colors">Figma FigPals 用户行为研究</h4>
@@ -618,17 +615,19 @@
         }
 
         // 3. 项目详情数据库 (对应全屏 PPT 结构)
+       // 3. 项目详情数据库 (对应全屏 PPT 结构)
+        // 【升级版】：你只需要在这里修改 image: "你的图片名.jpg" 即可，再也不用改 HTML 代码了！
         const projectData = {
             'case1': {
                 title: "中韩邮轮内装设计调研",
                 themeColor: "from-blue-50 to-indigo-50",
                 slides: [
-                    { type: 'Cover', label: '01 / 封面', title: "中韩邮轮内装设计调研", desc: "User Research & Spatial Experience Design", isDark: false },
-                    { type: 'Background', label: '02 / 项目背景', title: "文化语境与空间需求", desc: "分析中韩航线特定文化背景下，旅客对邮轮内部空间的隐性需求与行为痛点。", isDark: true },
-                    { type: 'Research', label: '03 / 用户研究', title: "属地文化分析与用户分层", desc: "采用定性访谈与定量问卷结合，构建航线客群的基础行为画像与分层模型。", isDark: false },
-                    { type: 'Insight', label: '04 / 洞察分析', title: "需求转化图谱", desc: "将抽象的文化属性与体验诉求，映射为具体的空间功能指标。", isDark: false },
-                    { type: 'Strategy', label: '05 / 设计策略', title: "基于数据的空间叙事", desc: "提出以模块化、场景化为核心的内装设计指导策略。", isDark: true },
-                    { type: 'Solution', label: '06 / 方案展示', title: "体验原型构建", desc: "输出符合目标客群偏好的核心区域体验原型与服务触点设计。", isDark: false }
+                    { type: 'Cover', label: '01 / 封面', title: "中韩邮轮内装设计调研", desc: "User Research & Spatial Experience Design", isDark: false, image: "cur1.png" },
+                    { type: 'Background', label: '02 / 项目背景', title: "属地分析与文化语境", desc: "分析中韩航线特定文化背景下，属地文化对游客体验偏好的影响。", isDark: true, carouselCount: 2 },
+                    { type: 'Research', label: '03 / 用户研究', title: "客群分析与用户分层", desc: "进行深层桌面研究，构建航线客群的基础行为画像与分层模型。", isDark: false, carouselCount: 2 },
+                    { type: 'Insight', label: '04 / 洞察分析', title: "需求转化图谱", desc: "将抽象的文化属性与体验诉求，映射为具体的空间需求指标。", isDark: false, image: "cur8.png" },
+                    { type: 'Strategy', label: '05 / 设计策略', title: "基于数据的空间叙事", desc: "提出以故事化为核心的内装设计指导策略。", isDark: true, image: "cur6.png" },
+                    { type: 'Solution', label: '06 / 方案展示', title: "体验原型构建", desc: "输出符合目标客群偏好的核心区域体验原型与服务触点设计。", isDark: false, image: "case1-ppt6.jpg" }
                 ]
             },
             'case2': {
@@ -641,6 +640,8 @@
             'case3': {
                 title: "《元游》传统文化体验平台",
                 themeColor: "from-blue-50 to-cyan-50",
+                // 【元游项目】：因为它是多图左右滑动的，这里不需要写 image，代码会自动去 images 文件夹里找：
+                // case3-slide1-1.jpg, case3-slide1-2.jpg ... 依次类推。
                 slides: [
                     { type: 'Cover', label: '01 / 封面', title: "《元游》数字平台", desc: "传统文化体验产品设计 (省级大创项目)", isDark: false, carouselCount: 3 },
                     { type: 'Background', label: '02 / 项目背景', title: "文化传承的数字化困境", desc: "解决传统文化在年轻群体中传播力弱、体验形式单一的问题。", isDark: false, carouselCount: 3 },
@@ -655,11 +656,11 @@
                 title: "Figma FigPals 用户行为研究",
                 themeColor: "from-blue-50 to-indigo-100",
                 slides: [
-                    { type: 'Cover', label: '01 / 封面', title: "Figma FigPals 研究", desc: "针对协作生态微互动的行为模式分析。", isDark: false },
-                    { type: 'Background', label: '02 / 研究背景', title: "协作工具的社交维度", desc: "探究设计工具中轻量级互动(FigPals)如何影响团队协作效率与情感联结。", isDark: true },
-                    { type: 'Method', label: '03 / 研究方法', title: "实验设计与行为观察", desc: "60位受试者随机抽取分组，进行模拟操作实验，记录实验过程特殊行为与时间。", isDark: false },
-                    { type: 'Insight', label: '04 / 洞察与需求', title: "微互动的核心痛点", desc: "挖掘用户在协同作业时未被满足的隐性社交与情绪表达诉求。", isDark: false },
-                    { type: 'Outcome', label: '05 / 研究成果', title: "行为模式洞察报告", desc: "输出指导后续协作功能迭代的用户体验升级策略。", isDark: true }
+                    { type: 'Cover', label: '01 / 封面', title: "Figma FigPals 研究", desc: "针对协作生态微互动的行为模式分析。", isDark: false, image: "yuanyou1.png" },
+                    { type: 'Background', label: '02 / 研究背景', title: "协作工具的社交维度", desc: "探究设计工具中轻量级互动(FigPals)如何影响团队协作效率与情感联结。", isDark: true, carouselCount: 4 },
+                    { type: 'Method', label: '03 / 研究方法', title: "实验设计与行为观察", desc: "60位受试者随机抽取分组，进行模拟操作实验，记录实验过程特殊行为与时间。", isDark: false, carouselCount: 6 },
+                    { type: 'Insight', label: '04 / 实验与洞察', title: "微互动的核心痛点", desc: "挖掘用户在协同作业时未被满足的隐性社交与情绪表达诉求。", isDark: false, carouselCount: 3 },
+                    { type: 'Outcome', label: '05 / 研究成果', title: "行为模式洞察报告", desc: "输出指导后续协作功能迭代的用户体验升级策略。", isDark: true, carouselCount: 10 }
                 ]
             }
         };
@@ -669,10 +670,7 @@
             const lightbox = document.getElementById('lightbox-modal');
             const contentContainer = document.getElementById('lightbox-content');
             
-            // 复制触发元素内的 HTML 以保留内部可能直接插入的 <img> 标签
             let htmlContent = element.innerHTML;
-            
-            // 检查元素内是否有真实的 img，如果有，直接提出它并进行包裹，保证比例和显示
             const tempDiv = document.createElement('div');
             tempDiv.innerHTML = htmlContent;
             const imgElement = tempDiv.querySelector('img');
@@ -680,12 +678,10 @@
             if (imgElement) {
                 contentContainer.innerHTML = `<img src="${imgElement.src}" class="max-w-full max-h-full object-contain rounded-lg shadow-2xl">`;
             } else {
-                // 如果用户还没插入 img，就把原本的占位框放大显示
                 contentContainer.innerHTML = `<div class="w-full h-full flex items-center justify-center">${htmlContent}</div>`;
             }
 
             lightbox.classList.remove('hidden');
-            // 触发重绘应用动画
             void lightbox.offsetWidth;
             lightbox.classList.add('opacity-100');
         };
@@ -706,6 +702,101 @@
             modal.classList.remove('hidden');
             void modal.offsetWidth; 
             modal.classList.add('opacity-100');
+        };
+
+        window.closeResearchModal = function() {
+            const modal = document.getElementById('research-modal');
+            modal.classList.remove('opacity-100');
+            setTimeout(() => {
+                modal.classList.add('hidden');
+                document.body.style.overflow = 'auto'; 
+            }, 500); 
+        };
+
+        // 将模态框控制函数绑定至全局对象，确保内联 onclick 事件可正确调用
+        window.openProjectModal = function(projectId) {
+            const data = projectData[projectId];
+            if (!data) return;
+
+            const modal = document.getElementById('project-modal');
+            const modalContent = document.getElementById('modal-content');
+            
+            if (!modal || !modalContent) return;
+
+            let htmlString = '';
+            
+            data.slides.forEach((slide, index) => {
+                const bgClass = slide.isDark ? 'bg-[#1D1D1F] text-white' : 'bg-white text-apple-text';
+                const textMutedClass = slide.isDark ? 'text-[#A1A1A6]' : 'text-apple-subtext';
+                
+                const backgroundStyle = index === 0 && !slide.isDark ? `bg-gradient-to-br ${data.themeColor}` : bgClass;
+
+                let visualHtml = '';
+                if (slide.hideVisual) {
+                    visualHtml = '';
+                } else if (slide.carouselCount && slide.carouselCount > 1) {
+                    // 生成支持横向滑动的 PPT 组（元游项目专属）
+                    let carouselItems = '';
+                    for (let i = 0; i < slide.carouselCount; i++) {
+                        carouselItems += `
+                        <div class="snap-center shrink-0 w-full aspect-video rounded-2xl overflow-hidden relative shadow-2xl ${slide.isDark ? 'bg-[#2C2C2E]' : 'bg-[#F5F5F7] border border-gray-100'} flex items-center justify-center cursor-zoom-in hover:opacity-90 transition-opacity border border-apple-border/20 group" onclick="openLightbox(this)">
+                           <img src="./images/${projectId}-slide${index + 1}-${i + 1}.jpg" alt="Slide ${index + 1} Image ${i + 1}" class="absolute inset-0 w-full h-full object-cover bg-white"> <img src="./images/case3-slide${index + 1}-${i + 1}.jpg" alt="Slide ${index + 1} Image ${i + 1}" class="absolute inset-0 w-full h-full object-cover bg-white">
+                        </div>`;
+                    }
+                    visualHtml = `
+                    <div class="flex-1 w-full relative">
+                        <div class="flex gap-4 overflow-x-auto pb-6 pt-2 snap-x snap-mandatory no-scrollbar w-full">
+                            ${carouselItems}
+                        </div>
+                        <div class="absolute bottom-0 left-1/2 -translate-x-1/2 flex items-center gap-2 text-[11px] uppercase tracking-widest ${textMutedClass} opacity-70">
+                            <svg class="w-4 h-4 animate-pulse" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7h12m0 0l-4-4m4 4l-4 4m0 6H4m0 0l4 4m-4-4l4-4"></path></svg>
+                            Slide to view more
+                        </div>
+                    </div>`;
+                } else {
+                    // 常单图展示逻辑（中韩邮轮、FigPals），直接读取你填入的 image 属性
+                    visualHtml = `
+                        <div class="flex-1 w-full aspect-video rounded-2xl overflow-hidden relative shadow-2xl ${slide.isDark ? 'bg-[#2C2C2E]' : 'bg-[#F5F5F7] border border-gray-100'} flex items-center justify-center cursor-zoom-in hover:opacity-90 transition-opacity border border-apple-border/20 group" onclick="openLightbox(this)">
+                             <img src="./images/${slide.image}" alt="PPT" class="absolute inset-0 w-full h-full object-cover bg-white">
+                        </div>
+                    `;
+                }
+
+                htmlString += `
+                    <section class="snap-section flex items-center justify-center relative p-8 md:p-24 ${backgroundStyle}">
+                        <div class="max-w-5xl w-full flex flex-col md:flex-row gap-12 items-center">
+                            
+                            <div class="flex-1 space-y-6 z-10 ${slide.hideVisual ? 'text-center max-w-3xl mx-auto' : ''}">
+                                <div class="text-[14px] font-bold tracking-widest uppercase text-apple-blue mb-4">
+                                    ${slide.label}
+                                </div>
+                                <h2 class="text-[40px] md:text-[56px] font-bold leading-tight tracking-tight">
+                                    ${slide.title}
+                                </h2>
+                                <p class="text-[18px] md:text-[24px] ${textMutedClass} leading-relaxed font-light ${slide.hideVisual ? 'mx-auto' : 'max-w-2xl'}">
+                                    ${slide.desc}
+                                </p>
+                            </div>
+
+                            ${visualHtml}
+                        </div>
+
+                        ${index < data.slides.length - 1 ? `
+                        <div class="absolute bottom-12 left-1/2 -translate-x-1/2 flex flex-col items-center animate-bounce ${textMutedClass}">
+                            <span class="text-[12px] uppercase tracking-widest mb-2">Scroll</span>
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path></svg>
+                        </div>
+                        ` : ''}
+                    </section>
+                `;
+            });
+
+            modalContent.innerHTML = htmlString;
+            
+            document.body.style.overflow = 'hidden'; 
+            modal.classList.remove('hidden');
+            void modal.offsetWidth; 
+            modal.classList.add('opacity-100'););
         };
 
         window.closeResearchModal = function() {
