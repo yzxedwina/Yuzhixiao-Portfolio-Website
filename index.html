@@ -716,10 +716,10 @@
                         <!-- 沉浸式氛围背景 -->
                         ${bgImageUrl ? `
                         <div class="absolute inset-0 z-0 pointer-events-none select-none overflow-hidden">
-                            <!-- 放大且极度模糊的底图 -->
-                            <img src="${bgImageUrl}" class="w-full h-full object-cover scale-125 blur-3xl opacity-50">
-                            <!-- 半透明遮罩层 (保证文字能看清) -->
-                            <div class="absolute inset-0 ${isDark ? 'bg-[#1D1D1F]/80' : 'bg-white/80'} backdrop-blur-2xl"></div>
+                            <!-- 放大且极度模糊的底图 (增加饱和度和亮度，让光晕更明显) -->
+                            <img src="${bgImageUrl}" class="w-full h-full object-cover scale-[1.5] blur-[80px] opacity-70 saturate-150">
+                            <!-- 半透明遮罩层 (调低不透明度，让底色透出来) -->
+                            <div class="absolute inset-0 ${isDark ? 'bg-[#1D1D1F]/60' : 'bg-white/60'} backdrop-blur-2xl"></div>
                         </div>
                         ` : `
                         <div class="absolute inset-0 z-0 ${backgroundStyle}"></div>
