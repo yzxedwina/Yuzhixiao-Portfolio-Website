@@ -548,7 +548,7 @@
     </div>
 
     <!-- JS 逻辑 -->
-    <script>
+<script>
         // 将初始化逻辑封装，避免在预览环境中由于 DOMContentLoaded 已触发而导致失效
         function initApp() {
             // 0. 移除加载骨架屏 (Skeleton Screen) 模拟数据加载
@@ -614,9 +614,7 @@
             initApp();
         }
 
-        // 3. 项目详情数据库 (对应全屏 PPT 结构)
-       // 3. 项目详情数据库 (对应全屏 PPT 结构)
-        // 【升级版】：你只需要在这里修改 image: "你的图片名.jpg" 即可，再也不用改 HTML 代码了！
+        // 3. 项目详情数据库 (保留了你修改的所有数据)
         const projectData = {
             'case1': {
                 title: "中韩邮轮内装设计调研",
@@ -640,8 +638,6 @@
             'case3': {
                 title: "《元游》传统文化体验平台",
                 themeColor: "from-blue-50 to-cyan-50",
-                // 【元游项目】：因为它是多图左右滑动的，这里不需要写 image，代码会自动去 images 文件夹里找：
-                // case3-slide1-1.jpg, case3-slide1-2.jpg ... 依次类推。
                 slides: [
                     { type: 'Cover', label: '01 / 封面', title: "《元游》数字平台", desc: "传统文化体验产品设计 (省级大创项目)", isDark: false, carouselCount: 3 },
                     { type: 'Background', label: '02 / 项目背景', title: "文化传承的数字化困境", desc: "解决传统文化在年轻群体中传播力弱、体验形式单一的问题。", isDark: false, carouselCount: 3 },
@@ -713,7 +709,7 @@
             }, 500); 
         };
 
-        // 将模态框控制函数绑定至全局对象，确保内联 onclick 事件可正确调用
+        // 项目弹窗 Modal 控制
         window.openProjectModal = function(projectId) {
             const data = projectData[projectId];
             if (!data) return;
@@ -735,12 +731,12 @@
                 if (slide.hideVisual) {
                     visualHtml = '';
                 } else if (slide.carouselCount && slide.carouselCount > 1) {
-                    // 生成支持横向滑动的 PPT 组（元游项目专属）
+                    // 生成支持横向滑动的 PPT 组
                     let carouselItems = '';
                     for (let i = 0; i < slide.carouselCount; i++) {
                         carouselItems += `
                         <div class="snap-center shrink-0 w-full aspect-video rounded-2xl overflow-hidden relative shadow-2xl ${slide.isDark ? 'bg-[#2C2C2E]' : 'bg-[#F5F5F7] border border-gray-100'} flex items-center justify-center cursor-zoom-in hover:opacity-90 transition-opacity border border-apple-border/20 group" onclick="openLightbox(this)">
-                           <img src="./images/${projectId}-slide${index + 1}-${i + 1}.jpg" alt="Slide ${index + 1} Image ${i + 1}" class="absolute inset-0 w-full h-full object-cover bg-white"> <img src="./images/case3-slide${index + 1}-${i + 1}.jpg" alt="Slide ${index + 1} Image ${i + 1}" class="absolute inset-0 w-full h-full object-cover bg-white">
+                           <img src="./images/${projectId}-slide${index + 1}-${i + 1}.jpg" alt="Slide ${index + 1} Image ${i + 1}" class="absolute inset-0 w-full h-full object-cover bg-white">
                         </div>`;
                     }
                     visualHtml = `
@@ -754,7 +750,7 @@
                         </div>
                     </div>`;
                 } else {
-                    // 常单图展示逻辑（中韩邮轮、FigPals），直接读取你填入的 image 属性
+                    // 单图展示逻辑
                     visualHtml = `
                         <div class="flex-1 w-full aspect-video rounded-2xl overflow-hidden relative shadow-2xl ${slide.isDark ? 'bg-[#2C2C2E]' : 'bg-[#F5F5F7] border border-gray-100'} flex items-center justify-center cursor-zoom-in hover:opacity-90 transition-opacity border border-apple-border/20 group" onclick="openLightbox(this)">
                              <img src="./images/${slide.image}" alt="PPT" class="absolute inset-0 w-full h-full object-cover bg-white">
@@ -796,116 +792,6 @@
             document.body.style.overflow = 'hidden'; 
             modal.classList.remove('hidden');
             void modal.offsetWidth; 
-            modal.classList.add('opacity-100'););
-        };
-
-        window.closeResearchModal = function() {
-            const modal = document.getElementById('research-modal');
-            modal.classList.remove('opacity-100');
-            setTimeout(() => {
-                modal.classList.add('hidden');
-                document.body.style.overflow = 'auto'; 
-            }, 500); 
-        };
-
-        // 将模态框控制函数绑定至全局对象，确保内联 onclick 事件可正确调用
-        window.openProjectModal = function(projectId) {
-            const data = projectData[projectId];
-            if (!data) return;
-
-            const modal = document.getElementById('project-modal');
-            const modalContent = document.getElementById('modal-content');
-            
-            if (!modal || !modalContent) return;
-
-            let htmlString = '';
-            
-            data.slides.forEach((slide, index) => {
-                const bgClass = slide.isDark ? 'bg-[#1D1D1F] text-white' : 'bg-white text-apple-text';
-                const textMutedClass = slide.isDark ? 'text-[#A1A1A6]' : 'text-apple-subtext';
-                
-                const backgroundStyle = index === 0 && !slide.isDark ? `bg-gradient-to-br ${data.themeColor}` : bgClass;
-
-                // 判断是否需要隐藏图片区（针对保密项目）或生成左右滑动组件（Carousel）
-                let visualHtml = '';
-                if (slide.hideVisual) {
-                    visualHtml = '';
-                } else if (slide.carouselCount && slide.carouselCount > 1) {
-                    // 生成支持横向滑动的 PPT 组
-                    let carouselItems = '';
-                    for (let i = 0; i < slide.carouselCount; i++) {
-                        carouselItems += `
-                        <div class="snap-center shrink-0 w-full aspect-video rounded-2xl overflow-hidden relative shadow-2xl ${slide.isDark ? 'bg-[#2C2C2E]' : 'bg-[#F5F5F7] border border-gray-100'} flex items-center justify-center cursor-zoom-in hover:opacity-90 transition-opacity border border-apple-border/20 group" onclick="openLightbox(this)">
-                            <!-- 后续直接将此内容替换为您的 <img> 即可，例：<img src="..." class="w-full h-full object-cover"> -->
-                            <div class="absolute inset-0 opacity-20 pointer-events-none" style="background-image: radial-gradient(circle at 2px 2px, ${slide.isDark ? 'white' : 'black'} 1px, transparent 0); background-size: 32px 32px;"></div>
-                            <div class="flex flex-col items-center pointer-events-none z-10">
-                                <svg class="w-8 h-8 ${slide.isDark ? 'text-white/30' : 'text-black/30'} mb-2 group-hover:scale-110 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"></path></svg>
-                                <span class="${textMutedClass} font-mono text-xs tracking-widest uppercase text-center leading-relaxed">PPT ${i + 1} / ${slide.carouselCount}<br>Click to Enlarge</span>
-                            </div>
-                        </div>`;
-                    }
-                    visualHtml = `
-                    <div class="flex-1 w-full relative">
-                        <div class="flex gap-4 overflow-x-auto pb-6 pt-2 snap-x snap-mandatory no-scrollbar w-full">
-                            ${carouselItems}
-                        </div>
-                        <div class="absolute bottom-0 left-1/2 -translate-x-1/2 flex items-center gap-2 text-[11px] uppercase tracking-widest ${textMutedClass} opacity-70">
-                            <svg class="w-4 h-4 animate-pulse" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7h12m0 0l-4-4m4 4l-4 4m0 6H4m0 0l4 4m-4-4l4-4"></path></svg>
-                            Slide to view more
-                        </div>
-                    </div>`;
-                } else {
-                    // 原来的单图展示逻辑
-                    visualHtml = `
-                        <div class="flex-1 w-full aspect-video rounded-2xl overflow-hidden relative shadow-2xl ${slide.isDark ? 'bg-[#2C2C2E]' : 'bg-[#F5F5F7] border border-gray-100'} flex items-center justify-center cursor-zoom-in hover:opacity-90 transition-opacity border border-apple-border/20 group" onclick="openLightbox(this)">
-                             <!-- PPT 比例 (16:9) 占位框：后续直接替换此处的内部内容为 <img src="..." class="w-full h-full object-cover"> 即可 -->
-                             <div class="absolute inset-0 opacity-20 pointer-events-none" style="background-image: radial-gradient(circle at 2px 2px, ${slide.isDark ? 'white' : 'black'} 1px, transparent 0); background-size: 32px 32px;"></div>
-                             <div class="flex flex-col items-center pointer-events-none z-10">
-                                 <svg class="w-8 h-8 ${slide.isDark ? 'text-white/30' : 'text-black/30'} mb-2 group-hover:scale-110 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v3m0 0v3m0-3h3m-3 0H7"></path></svg>
-                                 <span class="${textMutedClass} font-mono text-xs tracking-widest uppercase text-center leading-relaxed">点击放置内容<br>Click to Enlarge</span>
-                             </div>
-                        </div>
-                    `;
-                }
-
-                htmlString += `
-                    <section class="snap-section flex items-center justify-center relative p-8 md:p-24 ${backgroundStyle}">
-                        <div class="max-w-5xl w-full flex flex-col md:flex-row gap-12 items-center">
-                            
-                            <!-- 文本内容区 -->
-                            <div class="flex-1 space-y-6 z-10 ${slide.hideVisual ? 'text-center max-w-3xl mx-auto' : ''}">
-                                <div class="text-[14px] font-bold tracking-widest uppercase text-apple-blue mb-4">
-                                    ${slide.label}
-                                </div>
-                                <h2 class="text-[40px] md:text-[56px] font-bold leading-tight tracking-tight">
-                                    ${slide.title}
-                                </h2>
-                                <p class="text-[18px] md:text-[24px] ${textMutedClass} leading-relaxed font-light ${slide.hideVisual ? 'mx-auto' : 'max-w-2xl'}">
-                                    ${slide.desc}
-                                </p>
-                            </div>
-
-                            ${visualHtml}
-                        </div>
-
-                        <!-- 滚动提示 (除最后一页) -->
-                        ${index < data.slides.length - 1 ? `
-                        <div class="absolute bottom-12 left-1/2 -translate-x-1/2 flex flex-col items-center animate-bounce ${textMutedClass}">
-                            <span class="text-[12px] uppercase tracking-widest mb-2">Scroll</span>
-                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path></svg>
-                        </div>
-                        ` : ''}
-                    </section>
-                `;
-            });
-
-            modalContent.innerHTML = htmlString;
-            
-            // 显示 Modal 及其动画
-            document.body.style.overflow = 'hidden'; // 锁住底层滚动
-            modal.classList.remove('hidden');
-            // 触发重绘以应用 transition
-            void modal.offsetWidth; 
             modal.classList.add('opacity-100');
         };
 
@@ -919,9 +805,9 @@
             setTimeout(() => {
                 modal.classList.add('hidden');
                 modalContent.innerHTML = '';
-                document.body.style.overflow = 'auto'; // 恢复底层滚动
-            }, 500); // 对应 transition 耗时
+                document.body.style.overflow = 'auto'; 
+            }, 500); 
         };
     </script>
-</body>
+    </body>
 </html>
