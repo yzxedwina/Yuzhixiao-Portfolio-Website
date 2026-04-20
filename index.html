@@ -179,6 +179,12 @@
                     </a>
                 </div>
             </div>
+            <div class="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center animate-bounce z-20 cursor-pointer group" onclick="document.getElementById('about').scrollIntoView({behavior: 'smooth'})">
+                <span class="text-[11px] uppercase tracking-widest mb-2 font-medium text-apple-subtext group-hover:text-apple-blue transition-colors">Scroll Down</span>
+                <div class="w-8 h-8 rounded-full bg-white/80 backdrop-blur border border-apple-border flex items-center justify-center text-apple-subtext group-hover:text-apple-blue group-hover:border-apple-blue/30 shadow-sm transition-all">
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path></svg>
+                </div>
+            </div>
         </section>
 
         <section id="about" class="py-32 px-6 md:px-12 lg:px-24 bg-white relative overflow-hidden">
@@ -789,11 +795,13 @@
                         </div>
                         
                         ${index < data.slides.length - 1 ? `
-                        <div class="absolute bottom-12 left-1/2 -translate-x-1/2 flex flex-col items-center animate-bounce ${textMutedClass} relative z-10">
-                            <span class="text-[12px] uppercase tracking-widest mb-2">Scroll</span>
-                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path></svg>
-                        </div>
-                        ` : ''}
+<div class="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center animate-bounce z-20 pointer-events-none">
+    <div class="${isDark ? 'bg-white/10 border-white/20' : 'bg-black/5 border-black/10'} backdrop-blur-md px-5 py-2.5 rounded-full flex flex-col items-center border shadow-sm">
+        <span class="text-[10px] uppercase tracking-widest mb-1 ${textMutedClass} font-bold">Scroll Down</span>
+        <svg class="w-4 h-4 ${textClass}" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path></svg>
+    </div>
+</div>
+` : ''}
                     </section>
                 `;
             });
