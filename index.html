@@ -438,44 +438,86 @@
         <button onclick="closeResearchModal()" class="fixed top-8 right-8 z-50 w-12 h-12 bg-white/80 backdrop-blur-md rounded-full flex items-center justify-center text-apple-text hover:bg-gray-100 transition-colors shadow-sm border border-apple-border">
             <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
         </button>
-        <div class="max-w-6xl mx-auto px-6 py-24 space-y-16">
+        <div class="max-w-7xl mx-auto px-6 py-24 space-y-16">
             <div class="space-y-4 max-w-4xl">
                 <span class="px-3 py-1 bg-apple-blue/10 text-apple-blue font-bold text-[12px] rounded-md uppercase tracking-wider">Research Display</span>
                 <h2 class="text-[32px] md:text-[40px] font-bold text-apple-text leading-tight">《基于AHP-TOPSIS模型的邮轮航线优化策略研究》</h2>
             </div>
+            
             <div class="space-y-6">
                 <h3 class="text-[24px] font-semibold border-b border-apple-border pb-4">学术海报 (Poster)</h3>
                 <div class="w-full max-w-3xl aspect-[3/4] bg-white rounded-2xl shadow-apple-card flex items-center justify-center cursor-zoom-in relative overflow-hidden group border border-apple-border/50 transition-opacity hover:opacity-90" onclick="openLightbox(this)">
                    <img src="./images/poster.jpg" alt="学术海报" class="absolute inset-0 w-full h-full object-contain bg-white">
+                   <div class="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors flex items-center justify-center pointer-events-none">
+                       <div class="opacity-0 group-hover:opacity-100 transform translate-y-2 group-hover:translate-y-0 transition-all duration-300 bg-black/60 text-white backdrop-blur-md px-5 py-2.5 rounded-full text-[14px] flex items-center gap-2 font-medium">
+                           <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v3m0 0v3m0-3h3m-3 0H7"></path></svg>
+                           点击放大
+                       </div>
+                   </div>
                 </div>
             </div>
+
             <div class="space-y-6">
                 <h3 class="text-[24px] font-semibold border-b border-apple-border pb-4">简报展示 (Presentation)</h3>
-                <div class="flex gap-6 overflow-x-auto pb-8 pt-2 snap-x snap-mandatory no-scrollbar">
-                    <div class="snap-center shrink-0 w-[85vw] md:w-[600px] aspect-video bg-white rounded-2xl shadow-apple-card flex items-center justify-center cursor-zoom-in relative group border border-apple-border/50 hover:opacity-90" onclick="openLightbox(this)">
-                        <img src="./images/ei1.png" alt="PPT 第 1 页" class="w-full h-full object-cover">
+                <div class="relative group/carousel">
+                    <button onclick="event.stopPropagation(); scrollCarousel(this, -1)" class="absolute -left-6 top-1/2 -translate-y-1/2 z-20 w-12 h-12 bg-white/90 backdrop-blur shadow-lg rounded-full flex items-center justify-center text-gray-800 opacity-0 group-hover/carousel:opacity-100 transition-all hover:scale-110 hover:bg-white hidden md:flex border border-gray-200">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path></svg>
+                    </button>
+                    
+                    <div class="flex gap-6 overflow-x-auto pb-8 pt-2 snap-x snap-mandatory no-scrollbar w-full">
+                        <div class="snap-center shrink-0 w-[85vw] md:w-[700px] aspect-video bg-white rounded-2xl shadow-apple-card flex items-center justify-center cursor-zoom-in relative group border border-apple-border/50 hover:opacity-90" onclick="openLightbox(this)">
+                            <img src="./images/ei1.png" alt="PPT 第 1 页" class="w-full h-full object-cover">
+                            <div class="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors flex items-center justify-center pointer-events-none">
+                               <div class="opacity-0 group-hover:opacity-100 transform translate-y-2 group-hover:translate-y-0 transition-all duration-300 bg-black/60 text-white backdrop-blur-md px-5 py-2.5 rounded-full text-[14px] flex items-center gap-2 font-medium"><svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v3m0 0v3m0-3h3m-3 0H7"></path></svg>点击放大</div>
+                            </div>
+                        </div>
+                        <div class="snap-center shrink-0 w-[85vw] md:w-[700px] aspect-video bg-white rounded-2xl shadow-apple-card flex items-center justify-center cursor-zoom-in relative group border border-apple-border/50 hover:opacity-90" onclick="openLightbox(this)">
+                            <img src="./images/ei2.png" alt="PPT 第 2 页" class="w-full h-full object-cover">
+                            <div class="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors flex items-center justify-center pointer-events-none">
+                               <div class="opacity-0 group-hover:opacity-100 transform translate-y-2 group-hover:translate-y-0 transition-all duration-300 bg-black/60 text-white backdrop-blur-md px-5 py-2.5 rounded-full text-[14px] flex items-center gap-2 font-medium"><svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v3m0 0v3m0-3h3m-3 0H7"></path></svg>点击放大</div>
+                            </div>
+                        </div>
+                        <div class="snap-center shrink-0 w-[85vw] md:w-[700px] aspect-video bg-white rounded-2xl shadow-apple-card flex items-center justify-center cursor-zoom-in relative group border border-apple-border/50 hover:opacity-90" onclick="openLightbox(this)">
+                            <img src="./images/ei3.png" alt="PPT 第 3 页" class="w-full h-full object-cover">
+                            <div class="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors flex items-center justify-center pointer-events-none">
+                               <div class="opacity-0 group-hover:opacity-100 transform translate-y-2 group-hover:translate-y-0 transition-all duration-300 bg-black/60 text-white backdrop-blur-md px-5 py-2.5 rounded-full text-[14px] flex items-center gap-2 font-medium"><svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v3m0 0v3m0-3h3m-3 0H7"></path></svg>点击放大</div>
+                            </div>
+                        </div>
+                        <div class="snap-center shrink-0 w-[85vw] md:w-[700px] aspect-video bg-white rounded-2xl shadow-apple-card flex items-center justify-center cursor-zoom-in relative group border border-apple-border/50 hover:opacity-90" onclick="openLightbox(this)">
+                            <img src="./images/ei4.png" alt="PPT 第 4 页" class="w-full h-full object-cover">
+                            <div class="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors flex items-center justify-center pointer-events-none">
+                               <div class="opacity-0 group-hover:opacity-100 transform translate-y-2 group-hover:translate-y-0 transition-all duration-300 bg-black/60 text-white backdrop-blur-md px-5 py-2.5 rounded-full text-[14px] flex items-center gap-2 font-medium"><svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v3m0 0v3m0-3h3m-3 0H7"></path></svg>点击放大</div>
+                            </div>
+                        </div>
+                        <div class="snap-center shrink-0 w-[85vw] md:w-[700px] aspect-video bg-white rounded-2xl shadow-apple-card flex items-center justify-center cursor-zoom-in relative group border border-apple-border/50 hover:opacity-90" onclick="openLightbox(this)">
+                            <img src="./images/ei5.png" alt="PPT 第 5 页" class="w-full h-full object-cover">
+                            <div class="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors flex items-center justify-center pointer-events-none">
+                               <div class="opacity-0 group-hover:opacity-100 transform translate-y-2 group-hover:translate-y-0 transition-all duration-300 bg-black/60 text-white backdrop-blur-md px-5 py-2.5 rounded-full text-[14px] flex items-center gap-2 font-medium"><svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v3m0 0v3m0-3h3m-3 0H7"></path></svg>点击放大</div>
+                            </div>
+                        </div>
+                        <div class="snap-center shrink-0 w-[85vw] md:w-[700px] aspect-video bg-white rounded-2xl shadow-apple-card flex items-center justify-center cursor-zoom-in relative group border border-apple-border/50 hover:opacity-90" onclick="openLightbox(this)">
+                            <img src="./images/ei6.png" alt="PPT 第 6 页" class="w-full h-full object-cover">
+                            <div class="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors flex items-center justify-center pointer-events-none">
+                               <div class="opacity-0 group-hover:opacity-100 transform translate-y-2 group-hover:translate-y-0 transition-all duration-300 bg-black/60 text-white backdrop-blur-md px-5 py-2.5 rounded-full text-[14px] flex items-center gap-2 font-medium"><svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v3m0 0v3m0-3h3m-3 0H7"></path></svg>点击放大</div>
+                            </div>
+                        </div>
+                        <div class="snap-center shrink-0 w-[85vw] md:w-[700px] aspect-video bg-white rounded-2xl shadow-apple-card flex items-center justify-center cursor-zoom-in relative group border border-apple-border/50 hover:opacity-90" onclick="openLightbox(this)">
+                            <img src="./images/ei7.png" alt="PPT 第 7 页" class="w-full h-full object-cover">
+                            <div class="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors flex items-center justify-center pointer-events-none">
+                               <div class="opacity-0 group-hover:opacity-100 transform translate-y-2 group-hover:translate-y-0 transition-all duration-300 bg-black/60 text-white backdrop-blur-md px-5 py-2.5 rounded-full text-[14px] flex items-center gap-2 font-medium"><svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v3m0 0v3m0-3h3m-3 0H7"></path></svg>点击放大</div>
+                            </div>
+                        </div>
+                        <div class="snap-center shrink-0 w-[85vw] md:w-[700px] aspect-video bg-white rounded-2xl shadow-apple-card flex items-center justify-center cursor-zoom-in relative group border border-apple-border/50 hover:opacity-90" onclick="openLightbox(this)">
+                            <img src="./images/ei8.png" alt="PPT 第 8 页" class="w-full h-full object-cover">
+                            <div class="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors flex items-center justify-center pointer-events-none">
+                               <div class="opacity-0 group-hover:opacity-100 transform translate-y-2 group-hover:translate-y-0 transition-all duration-300 bg-black/60 text-white backdrop-blur-md px-5 py-2.5 rounded-full text-[14px] flex items-center gap-2 font-medium"><svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v3m0 0v3m0-3h3m-3 0H7"></path></svg>点击放大</div>
+                            </div>
+                        </div>
                     </div>
-                   <div class="snap-center shrink-0 w-[85vw] md:w-[600px] aspect-video bg-white rounded-2xl shadow-apple-card flex items-center justify-center cursor-zoom-in relative group border border-apple-border/50 hover:opacity-90" onclick="openLightbox(this)">
-                        <img src="./images/ei2.png" alt="PPT 第 2 页" class="w-full h-full object-cover">
-                    </div>
-                    <div class="snap-center shrink-0 w-[85vw] md:w-[600px] aspect-video bg-white rounded-2xl shadow-apple-card flex items-center justify-center cursor-zoom-in relative group border border-apple-border/50 hover:opacity-90" onclick="openLightbox(this)">
-                        <img src="./images/ei3.png" alt="PPT 第 3 页" class="w-full h-full object-cover">
-                    </div>
-                    <div class="snap-center shrink-0 w-[85vw] md:w-[600px] aspect-video bg-white rounded-2xl shadow-apple-card flex items-center justify-center cursor-zoom-in relative group border border-apple-border/50 hover:opacity-90" onclick="openLightbox(this)">
-                        <img src="./images/ei4.png" alt="PPT 第 4 页" class="w-full h-full object-cover">
-                    </div>
-                    <div class="snap-center shrink-0 w-[85vw] md:w-[600px] aspect-video bg-white rounded-2xl shadow-apple-card flex items-center justify-center cursor-zoom-in relative group border border-apple-border/50 hover:opacity-90" onclick="openLightbox(this)">
-                        <img src="./images/ei5.png" alt="PPT 第 5 页" class="w-full h-full object-cover">
-                    </div>
-                    <div class="snap-center shrink-0 w-[85vw] md:w-[600px] aspect-video bg-white rounded-2xl shadow-apple-card flex items-center justify-center cursor-zoom-in relative group border border-apple-border/50 hover:opacity-90" onclick="openLightbox(this)">
-                        <img src="./images/ei6.png" alt="PPT 第 6 页" class="w-full h-full object-cover">
-                    </div>
-                    <div class="snap-center shrink-0 w-[85vw] md:w-[600px] aspect-video bg-white rounded-2xl shadow-apple-card flex items-center justify-center cursor-zoom-in relative group border border-apple-border/50 hover:opacity-90" onclick="openLightbox(this)">
-                        <img src="./images/ei7.png" alt="PPT 第 7 页" class="w-full h-full object-cover">
-                    </div>
-                    <div class="snap-center shrink-0 w-[85vw] md:w-[600px] aspect-video bg-white rounded-2xl shadow-apple-card flex items-center justify-center cursor-zoom-in relative group border border-apple-border/50 hover:opacity-90" onclick="openLightbox(this)">
-                        <img src="./images/ei8.png" alt="PPT 第 8 页" class="w-full h-full object-cover">
-                    </div>
+                    
+                    <button onclick="event.stopPropagation(); scrollCarousel(this, 1)" class="absolute -right-6 top-1/2 -translate-y-1/2 z-20 w-12 h-12 bg-white/90 backdrop-blur shadow-lg rounded-full flex items-center justify-center text-gray-800 opacity-0 group-hover/carousel:opacity-100 transition-all hover:scale-110 hover:bg-white hidden md:flex border border-gray-200">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
+                    </button>
                 </div>
             </div>
         </div>
@@ -490,6 +532,16 @@
     </div>
 
     <script>
+        // 通用：左右滑动容器逻辑
+        window.scrollCarousel = function(btn, direction) {
+            const container = btn.parentElement.querySelector('.overflow-x-auto');
+            if (container) {
+                // 每次滚动可视宽度的 75%，确保滑动平滑且不会错过内容
+                const scrollAmount = container.clientWidth * 0.75;
+                container.scrollBy({ left: direction * scrollAmount, behavior: 'smooth' });
+            }
+        };
+
         function initApp() {
             setTimeout(() => {
                 document.body.classList.remove('is-loading');
@@ -560,7 +612,8 @@
                 title: "房地产高净值用户需求洞察",
                 themeColor: "from-gray-900 to-black",
                 slides: [
-                    { type: 'Cover', label: 'CONFIDENTIAL', title: "房地产高净值用户洞察", desc: "保密项目-暂时不予公开展示，可联系本人交流方法论", isDark: false, hideVisual: true }
+                    // ★修复：这里改回 isDark: true，使得这段保密文字呈现纯白色，在暗色背景上极度清晰
+                    { type: 'Cover', label: 'CONFIDENTIAL', title: "房地产高净值用户洞察", desc: "保密项目-暂时不予公开展示，可联系本人交流方法论", isDark: true, hideVisual: true }
                 ]
             },
             'case3': {
@@ -653,35 +706,57 @@
                 let visualHtml = '';
                 let bgImageUrl = ''; // 提取当前 PPT 当作背景大图
 
+                // ★交互与视觉提升：为所有悬浮操作加入“点击放大”提示胶囊
+                const clickHintHtml = `
+                <div class="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors flex items-center justify-center pointer-events-none">
+                    <div class="opacity-0 group-hover:opacity-100 transform translate-y-2 group-hover:translate-y-0 transition-all duration-300 bg-black/60 text-white backdrop-blur-md px-5 py-2.5 rounded-full text-[14px] flex items-center gap-2 font-medium">
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v3m0 0v3m0-3h3m-3 0H7"></path></svg>
+                        点击放大
+                    </div>
+                </div>`;
+
                 if (slide.hideVisual) {
                     visualHtml = '';
                 } else if (slide.carouselCount && slide.carouselCount > 1) {
-                    // 滑动图强制匹配 .png
                     bgImageUrl = `./images/${projectId}-slide${index + 1}-1.png`; 
                     
                     let carouselItems = '';
                     for (let i = 0; i < slide.carouselCount; i++) {
                         carouselItems += `
-                        <div class="snap-center shrink-0 w-full aspect-video rounded-2xl overflow-hidden relative shadow-2xl ${isDark ? 'bg-[#2C2C2E]' : 'bg-[#F5F5F7] border border-gray-100'} flex items-center justify-center cursor-zoom-in hover:opacity-90 transition-opacity border border-apple-border/20 group" onclick="openLightbox(this)">
+                        <div class="snap-center shrink-0 w-full aspect-video rounded-2xl overflow-hidden relative shadow-2xl ${isDark ? 'bg-[#2C2C2E]' : 'bg-[#F5F5F7] border border-gray-100'} flex items-center justify-center cursor-zoom-in hover:opacity-100 transition-opacity border border-apple-border/20 group" onclick="openLightbox(this)">
                            <img src="./images/${projectId}-slide${index + 1}-${i + 1}.png" alt="Slide ${index + 1} Image ${i + 1}" class="absolute inset-0 w-full h-full object-cover bg-white">
+                           ${clickHintHtml}
                         </div>`;
                     }
+                    
+                    // ★排版调整：分配 65% 的超大宽比给视觉区，增加悬浮左右滑动按钮
                     visualHtml = `
-                    <div class="flex-1 w-full relative">
+                    <div class="w-full md:w-[65%] relative group/carousel">
+                        <button onclick="event.stopPropagation(); scrollCarousel(this, -1)" class="absolute -left-5 top-1/2 -translate-y-1/2 z-20 w-10 h-10 bg-white/90 backdrop-blur shadow-lg rounded-full flex items-center justify-center text-gray-800 opacity-0 group-hover/carousel:opacity-100 transition-all hover:scale-110 hover:bg-white hidden md:flex border border-gray-200">
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path></svg>
+                        </button>
+
                         <div class="flex gap-4 overflow-x-auto pb-6 pt-2 snap-x snap-mandatory no-scrollbar w-full">
                             ${carouselItems}
                         </div>
+
+                        <button onclick="event.stopPropagation(); scrollCarousel(this, 1)" class="absolute -right-5 top-1/2 -translate-y-1/2 z-20 w-10 h-10 bg-white/90 backdrop-blur shadow-lg rounded-full flex items-center justify-center text-gray-800 opacity-0 group-hover/carousel:opacity-100 transition-all hover:scale-110 hover:bg-white hidden md:flex border border-gray-200">
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
+                        </button>
+
                         <div class="absolute bottom-0 left-1/2 -translate-x-1/2 flex items-center gap-2 text-[11px] uppercase tracking-widest ${textMutedClass} opacity-70">
                             <svg class="w-4 h-4 animate-pulse" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7h12m0 0l-4-4m4 4l-4 4m0 6H4m0 0l4 4m-4-4l4-4"></path></svg>
-                            Slide to view more
+                            左右滑动查看更多
                         </div>
                     </div>`;
                 } else {
                     if (slide.image) bgImageUrl = `./images/${slide.image}`;
                     
+                    // ★排版调整：单图同样获得 65% 的巨大展示宽比
                     visualHtml = `
-                        <div class="flex-1 w-full aspect-video rounded-2xl overflow-hidden relative shadow-2xl ${isDark ? 'bg-[#2C2C2E]' : 'bg-[#F5F5F7] border border-gray-100'} flex items-center justify-center cursor-zoom-in hover:opacity-90 transition-opacity border border-apple-border/20 group" onclick="openLightbox(this)">
+                        <div class="w-full md:w-[65%] aspect-video rounded-2xl overflow-hidden relative shadow-2xl ${isDark ? 'bg-[#2C2C2E]' : 'bg-[#F5F5F7] border border-gray-100'} flex items-center justify-center cursor-zoom-in hover:opacity-100 transition-opacity border border-apple-border/20 group" onclick="openLightbox(this)">
                              <img src="./images/${slide.image}" alt="PPT" class="absolute inset-0 w-full h-full object-cover bg-white">
+                             ${clickHintHtml}
                         </div>
                     `;
                 }
@@ -692,21 +767,21 @@
                         ${bgImageUrl ? `
                         <div class="absolute inset-0 z-0 pointer-events-none select-none overflow-hidden">
                             <img src="${bgImageUrl}" class="w-full h-full object-cover scale-[1.5] blur-[80px] opacity-100 saturate-200 brightness-110">
-                            <div class="absolute inset-0 ${isDark ? 'bg-[#1D1D1F]/50' : 'bg-white/50'} backdrop-blur-[30px]"></div>
+                            <div class="absolute inset-0 ${isDark ? 'bg-[#1D1D1F]/70' : 'bg-white/50'} backdrop-blur-[30px]"></div>
                         </div>
                         ` : `
                         <div class="absolute inset-0 z-0 ${backgroundStyle}"></div>
                         `}
 
-                        <div class="max-w-5xl w-full flex flex-col md:flex-row gap-12 items-center relative z-10">
-                            <div class="flex-1 space-y-6 ${slide.hideVisual ? 'text-center max-w-3xl mx-auto' : ''}">
+                        <div class="max-w-7xl w-full flex flex-col md:flex-row gap-8 items-center relative z-10 mx-auto">
+                            <div class="w-full md:w-[35%] shrink-0 space-y-6 ${slide.hideVisual ? 'text-center mx-auto md:w-full max-w-3xl' : ''}">
                                 <div class="text-[14px] font-bold tracking-widest uppercase text-apple-blue mb-4">
                                     ${slide.label}
                                 </div>
                                 <h2 class="text-[40px] md:text-[56px] font-bold leading-tight tracking-tight">
                                     ${slide.title}
                                 </h2>
-                                <p class="text-[18px] md:text-[24px] ${textMutedClass} leading-relaxed font-light ${slide.hideVisual ? 'mx-auto' : 'max-w-2xl'}">
+                                <p class="text-[18px] md:text-[24px] ${textMutedClass} leading-relaxed font-light ${slide.hideVisual ? 'mx-auto' : ''}">
                                     ${slide.desc}
                                 </p>
                             </div>
