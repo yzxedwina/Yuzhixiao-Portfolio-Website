@@ -82,7 +82,7 @@
             -webkit-text-fill-color: transparent;
         }
 
-        /* 骨架屏呼吸动画 (Skeleton Screen) */
+        /* 骨架屏呼吸动画 */
         body.is-loading .skeleton-target {
             background-color: #E5E5EA !important;
             color: transparent !important;
@@ -305,7 +305,8 @@
                 <div class="grid md:grid-cols-2 gap-8">
                     <div class="group cursor-pointer bg-white rounded-2xl overflow-hidden shadow-apple-card hover:shadow-apple-card-hover transition-all duration-500 transform hover:-translate-y-1 skeleton-target" onclick="openProjectModal('case1')">
                        <div class="h-64 bg-[#E5E5EA] relative overflow-hidden">
-                            <img src="./images/cur1.png" alt="中韩邮轮封面" loading="lazy" decoding="async" class="w-full h-full object-cover">
+                            <div class="absolute inset-0 flex items-center justify-center text-apple-subtext/20 z-0"><svg class="w-8 h-8 animate-spin" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"><circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle><path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path></svg></div>
+                            <img src="./images/cur1.png" alt="中韩邮轮封面" loading="lazy" decoding="async" class="absolute inset-0 w-full h-full object-cover z-10 opacity-0 transition-opacity duration-500" onload="this.classList.remove('opacity-0')">
                         </div>
                         <div class="p-8">
                             <div class="text-[12px] font-semibold text-apple-blue tracking-wider uppercase mb-2">User Research / Spatial Experience</div>
@@ -316,9 +317,10 @@
 
                     <div class="group cursor-pointer bg-white rounded-2xl overflow-hidden shadow-apple-card hover:shadow-apple-card-hover transition-all duration-500 transform hover:-translate-y-1 skeleton-target" onclick="openProjectModal('case2')">
                         <div class="h-64 relative overflow-hidden flex items-center justify-center bg-gray-900">
-                            <img src="./images/nda-cover.jpg" alt="NDA Background" loading="lazy" decoding="async" class="absolute inset-0 w-full h-full object-cover scale-125 blur-[30px] saturate-200 brightness-125 opacity-80 group-hover:scale-150 transition-transform duration-700">
-                            <div class="absolute inset-0 bg-[#1D1D1F]/30 backdrop-blur-[16px]"></div>
-                            <div class="relative z-10 text-white font-semibold tracking-[0.2em] text-lg drop-shadow-2xl shadow-black">NDA PROTECTED</div>
+                            <div class="absolute inset-0 flex items-center justify-center text-white/20 z-0"><svg class="w-8 h-8 animate-spin" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"><circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle><path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path></svg></div>
+                            <img src="./images/nda-cover.jpg" alt="NDA Background" loading="lazy" decoding="async" class="absolute inset-0 w-full h-full object-cover scale-125 blur-[30px] saturate-200 brightness-125 group-hover:scale-150 z-10 opacity-0 transition-all duration-700" onload="this.classList.remove('opacity-0'); this.classList.add('opacity-80')">
+                            <div class="absolute inset-0 bg-[#1D1D1F]/30 backdrop-blur-[16px] z-20 pointer-events-none"></div>
+                            <div class="relative z-30 text-white font-semibold tracking-[0.2em] text-lg drop-shadow-2xl shadow-black">NDA PROTECTED</div>
                         </div>
                         <div class="p-8">
                             <div class="text-[12px] font-semibold text-[#FF3B30] tracking-wider uppercase mb-2">Confidential Research</div>
@@ -329,7 +331,8 @@
 
                     <div class="group cursor-pointer bg-white rounded-2xl overflow-hidden shadow-apple-card hover:shadow-apple-card-hover transition-all duration-500 transform hover:-translate-y-1 skeleton-target" onclick="openProjectModal('case3')">
                         <div class="h-64 bg-[#E5E5EA] relative overflow-hidden">
-                            <img src="./images/case3-slide1-1.png" alt="元游项目封面" loading="lazy" decoding="async" class="w-full h-full object-cover">
+                            <div class="absolute inset-0 flex items-center justify-center text-apple-subtext/20 z-0"><svg class="w-8 h-8 animate-spin" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"><circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle><path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path></svg></div>
+                            <img src="./images/case3-slide1-1.png" alt="元游项目封面" loading="lazy" decoding="async" class="absolute inset-0 w-full h-full object-cover z-10 opacity-0 transition-opacity duration-500" onload="this.classList.remove('opacity-0')">
                         </div>
                         <div class="p-8">
                             <div class="text-[12px] font-semibold text-apple-blue tracking-wider uppercase mb-2">Product & UI/UX Design</div>
@@ -340,7 +343,8 @@
 
                     <div class="group cursor-pointer bg-white rounded-2xl overflow-hidden shadow-apple-card hover:shadow-apple-card-hover transition-all duration-500 transform hover:-translate-y-1 skeleton-target" onclick="openProjectModal('case4')">
                         <div class="h-64 bg-[#E5E5EA] relative overflow-hidden">
-                            <img src="./images/yuanyou1.png" alt="FigPals封面" loading="lazy" decoding="async" class="w-full h-full object-cover">
+                            <div class="absolute inset-0 flex items-center justify-center text-apple-subtext/20 z-0"><svg class="w-8 h-8 animate-spin" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"><circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle><path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path></svg></div>
+                            <img src="./images/yuanyou2.png" alt="FigPals封面" loading="lazy" decoding="async" class="absolute inset-0 w-full h-full object-cover z-10 opacity-0 transition-opacity duration-500" onload="this.classList.remove('opacity-0')">
                         </div>
                         <div class="p-8">
                             <div class="text-[12px] font-semibold text-apple-blue tracking-wider uppercase mb-2">Behavioral Research</div>
@@ -368,18 +372,19 @@
         </section>
 
         <section id="resume" class="py-32 px-6 md:px-12 lg:px-24 bg-apple-bg">
-            <div class="max-w-4xl mx-auto grid md:grid-cols-2 gap-16 fade-in-up">
+            <div class="max-w-7xl mx-auto grid md:grid-cols-2 gap-16 fade-in-up">
                 <div>
                     <h3 class="text-[32px] font-bold mb-8">Profile</h3>
-                    <div class="bg-white p-8 rounded-2xl shadow-sm border border-apple-border/50 relative">
+                    <div class="bg-white p-8 rounded-2xl shadow-sm border border-apple-border/50 relative h-full">
                         <div class="flex justify-between items-start mb-6">
                             <div>
                                 <h4 class="text-[24px] font-bold mb-1">俞之筱</h4>
                                 <p class="text-[16px] font-medium text-apple-text">Product Design</p>
                                 <p class="text-[14px] text-apple-subtext mt-1">User Researcher / Experience Designer</p>
                             </div>
-                           <div class="w-24 h-24 md:w-28 md:h-28 bg-apple-bg border border-apple-border rounded-xl flex items-center justify-center overflow-hidden shrink-0 ml-4">
-                                <img src="./images/avatar.jpg" alt="俞之筱" loading="lazy" decoding="async" class="w-full h-full object-cover">
+                           <div class="w-24 h-24 md:w-28 md:h-28 bg-apple-bg border border-apple-border rounded-xl flex items-center justify-center overflow-hidden shrink-0 ml-4 relative">
+                                <div class="absolute inset-0 flex items-center justify-center text-apple-subtext/20 z-0"><svg class="w-6 h-6 animate-spin" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"><circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle><path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path></svg></div>
+                                <img src="./images/avatar.jpg" alt="俞之筱" loading="lazy" decoding="async" class="absolute inset-0 w-full h-full object-cover z-10 opacity-0 transition-opacity duration-500" onload="this.classList.remove('opacity-0')">
                             </div>
                         </div>
                         
@@ -401,7 +406,7 @@
                             </div>
                         </div>
 
-                        <div class="mt-6">
+                        <div class="mt-8">
                             <button class="flex items-center justify-center w-full bg-apple-blue hover:bg-apple-blueHover text-white px-6 py-3 rounded-xl text-[15px] font-medium transition-colors">
                                 <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"></path></svg>
                                 下载 PDF 简历
@@ -448,16 +453,17 @@
             <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
         </button>
         <div class="max-w-7xl mx-auto px-6 py-24 space-y-16">
-            <div class="space-y-4 max-w-4xl mx-auto text-center">
+            <div class="space-y-4 w-full">
                 <span class="px-3 py-1 bg-apple-blue/10 text-apple-blue font-bold text-[12px] rounded-md uppercase tracking-wider">Research Display</span>
                 <h2 class="text-[32px] md:text-[40px] font-bold text-apple-text leading-tight mt-4">《基于AHP-TOPSIS模型的邮轮航线优化策略研究》</h2>
             </div>
             
-            <div class="space-y-6 max-w-5xl mx-auto">
+            <div class="space-y-6 w-full">
                 <h3 class="text-[24px] font-semibold border-b border-apple-border pb-4">学术海报 (Poster)</h3>
-                <div class="w-full max-w-3xl aspect-[3/4] mx-auto bg-white rounded-2xl shadow-apple-card flex items-center justify-center cursor-zoom-in relative overflow-hidden group border border-apple-border/50 transition-opacity hover:opacity-90" onclick="openLightbox(this)">
-                   <img src="./images/poster.jpg" alt="学术海报" loading="lazy" decoding="async" class="absolute inset-0 w-full h-full object-contain bg-white">
-                   <div class="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors flex items-center justify-center pointer-events-none">
+                <div class="w-full max-w-3xl aspect-[3/4] bg-white rounded-2xl shadow-apple-card flex items-center justify-center cursor-zoom-in relative overflow-hidden group border border-apple-border/50 transition-opacity hover:opacity-90" onclick="openLightbox(this)">
+                   <div class="absolute inset-0 flex items-center justify-center text-apple-subtext/20 z-0"><svg class="w-8 h-8 animate-spin" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"><circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle><path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path></svg></div>
+                   <img src="./images/poster.jpg" alt="学术海报" loading="lazy" decoding="async" class="absolute inset-0 w-full h-full object-contain bg-white z-10 opacity-0 transition-opacity duration-500" onload="this.classList.remove('opacity-0')">
+                   <div class="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors flex items-center justify-center pointer-events-none z-20">
                        <div class="opacity-0 group-hover:opacity-100 transform translate-y-2 group-hover:translate-y-0 transition-all duration-300 bg-black/60 text-white backdrop-blur-md px-5 py-2.5 rounded-full text-[14px] flex items-center gap-2 font-medium">
                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v3m0 0v3m0-3h3m-3 0H7"></path></svg>
                            点击放大
@@ -466,65 +472,73 @@
                 </div>
             </div>
 
-            <div class="space-y-6 max-w-7xl mx-auto">
+            <div class="space-y-6 w-full">
                 <h3 class="text-[24px] font-semibold border-b border-apple-border pb-4">简报展示 (Presentation)</h3>
                 <div class="relative group/carousel">
-                    <button onclick="event.stopPropagation(); scrollCarousel(this, -1)" class="absolute -left-6 top-1/2 -translate-y-1/2 z-20 w-12 h-12 bg-white/90 backdrop-blur shadow-lg rounded-full flex items-center justify-center text-gray-800 opacity-0 group-hover/carousel:opacity-100 transition-all hover:scale-110 hover:bg-white hidden md:flex border border-gray-200">
+                    <button onclick="event.stopPropagation(); scrollCarousel(this, -1)" class="absolute -left-6 top-1/2 -translate-y-1/2 z-30 w-12 h-12 bg-white/90 backdrop-blur shadow-lg rounded-full flex items-center justify-center text-gray-800 opacity-0 group-hover/carousel:opacity-100 transition-all hover:scale-110 hover:bg-white hidden md:flex border border-gray-200">
                         <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path></svg>
                     </button>
                     
                     <div class="flex gap-6 overflow-x-auto pb-8 pt-2 snap-x snap-mandatory no-scrollbar w-full">
                         <div class="snap-center shrink-0 w-[85vw] md:w-[700px] aspect-video bg-white rounded-2xl shadow-apple-card flex items-center justify-center cursor-zoom-in relative group border border-apple-border/50 hover:opacity-90" onclick="openLightbox(this)">
-                            <img src="./images/ei1.png" alt="PPT 第 1 页" loading="lazy" decoding="async" class="w-full h-full object-cover">
-                            <div class="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors flex items-center justify-center pointer-events-none">
+                            <div class="absolute inset-0 flex items-center justify-center text-apple-subtext/20 z-0"><svg class="w-8 h-8 animate-spin" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"><circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle><path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path></svg></div>
+                            <img src="./images/ei1.png" alt="PPT 第 1 页" loading="lazy" decoding="async" class="w-full h-full object-cover absolute inset-0 z-10 opacity-0 transition-opacity duration-500" onload="this.classList.remove('opacity-0')">
+                            <div class="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors flex items-center justify-center pointer-events-none z-20">
                                <div class="opacity-0 group-hover:opacity-100 transform translate-y-2 group-hover:translate-y-0 transition-all duration-300 bg-black/60 text-white backdrop-blur-md px-5 py-2.5 rounded-full text-[14px] flex items-center gap-2 font-medium"><svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v3m0 0v3m0-3h3m-3 0H7"></path></svg>点击放大</div>
                             </div>
                         </div>
                         <div class="snap-center shrink-0 w-[85vw] md:w-[700px] aspect-video bg-white rounded-2xl shadow-apple-card flex items-center justify-center cursor-zoom-in relative group border border-apple-border/50 hover:opacity-90" onclick="openLightbox(this)">
-                            <img src="./images/ei2.png" alt="PPT 第 2 页" loading="lazy" decoding="async" class="w-full h-full object-cover">
-                            <div class="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors flex items-center justify-center pointer-events-none">
+                            <div class="absolute inset-0 flex items-center justify-center text-apple-subtext/20 z-0"><svg class="w-8 h-8 animate-spin" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"><circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle><path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path></svg></div>
+                            <img src="./images/ei2.png" alt="PPT 第 2 页" loading="lazy" decoding="async" class="w-full h-full object-cover absolute inset-0 z-10 opacity-0 transition-opacity duration-500" onload="this.classList.remove('opacity-0')">
+                            <div class="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors flex items-center justify-center pointer-events-none z-20">
                                <div class="opacity-0 group-hover:opacity-100 transform translate-y-2 group-hover:translate-y-0 transition-all duration-300 bg-black/60 text-white backdrop-blur-md px-5 py-2.5 rounded-full text-[14px] flex items-center gap-2 font-medium"><svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v3m0 0v3m0-3h3m-3 0H7"></path></svg>点击放大</div>
                             </div>
                         </div>
                         <div class="snap-center shrink-0 w-[85vw] md:w-[700px] aspect-video bg-white rounded-2xl shadow-apple-card flex items-center justify-center cursor-zoom-in relative group border border-apple-border/50 hover:opacity-90" onclick="openLightbox(this)">
-                            <img src="./images/ei3.png" alt="PPT 第 3 页" loading="lazy" decoding="async" class="w-full h-full object-cover">
-                            <div class="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors flex items-center justify-center pointer-events-none">
+                            <div class="absolute inset-0 flex items-center justify-center text-apple-subtext/20 z-0"><svg class="w-8 h-8 animate-spin" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"><circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle><path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path></svg></div>
+                            <img src="./images/ei3.png" alt="PPT 第 3 页" loading="lazy" decoding="async" class="w-full h-full object-cover absolute inset-0 z-10 opacity-0 transition-opacity duration-500" onload="this.classList.remove('opacity-0')">
+                            <div class="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors flex items-center justify-center pointer-events-none z-20">
                                <div class="opacity-0 group-hover:opacity-100 transform translate-y-2 group-hover:translate-y-0 transition-all duration-300 bg-black/60 text-white backdrop-blur-md px-5 py-2.5 rounded-full text-[14px] flex items-center gap-2 font-medium"><svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v3m0 0v3m0-3h3m-3 0H7"></path></svg>点击放大</div>
                             </div>
                         </div>
                         <div class="snap-center shrink-0 w-[85vw] md:w-[700px] aspect-video bg-white rounded-2xl shadow-apple-card flex items-center justify-center cursor-zoom-in relative group border border-apple-border/50 hover:opacity-90" onclick="openLightbox(this)">
-                            <img src="./images/ei4.png" alt="PPT 第 4 页" loading="lazy" decoding="async" class="w-full h-full object-cover">
-                            <div class="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors flex items-center justify-center pointer-events-none">
+                            <div class="absolute inset-0 flex items-center justify-center text-apple-subtext/20 z-0"><svg class="w-8 h-8 animate-spin" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"><circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle><path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path></svg></div>
+                            <img src="./images/ei4.png" alt="PPT 第 4 页" loading="lazy" decoding="async" class="w-full h-full object-cover absolute inset-0 z-10 opacity-0 transition-opacity duration-500" onload="this.classList.remove('opacity-0')">
+                            <div class="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors flex items-center justify-center pointer-events-none z-20">
                                <div class="opacity-0 group-hover:opacity-100 transform translate-y-2 group-hover:translate-y-0 transition-all duration-300 bg-black/60 text-white backdrop-blur-md px-5 py-2.5 rounded-full text-[14px] flex items-center gap-2 font-medium"><svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v3m0 0v3m0-3h3m-3 0H7"></path></svg>点击放大</div>
                             </div>
                         </div>
                         <div class="snap-center shrink-0 w-[85vw] md:w-[700px] aspect-video bg-white rounded-2xl shadow-apple-card flex items-center justify-center cursor-zoom-in relative group border border-apple-border/50 hover:opacity-90" onclick="openLightbox(this)">
-                            <img src="./images/ei5.png" alt="PPT 第 5 页" loading="lazy" decoding="async" class="w-full h-full object-cover">
-                            <div class="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors flex items-center justify-center pointer-events-none">
+                            <div class="absolute inset-0 flex items-center justify-center text-apple-subtext/20 z-0"><svg class="w-8 h-8 animate-spin" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"><circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle><path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path></svg></div>
+                            <img src="./images/ei5.png" alt="PPT 第 5 页" loading="lazy" decoding="async" class="w-full h-full object-cover absolute inset-0 z-10 opacity-0 transition-opacity duration-500" onload="this.classList.remove('opacity-0')">
+                            <div class="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors flex items-center justify-center pointer-events-none z-20">
                                <div class="opacity-0 group-hover:opacity-100 transform translate-y-2 group-hover:translate-y-0 transition-all duration-300 bg-black/60 text-white backdrop-blur-md px-5 py-2.5 rounded-full text-[14px] flex items-center gap-2 font-medium"><svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v3m0 0v3m0-3h3m-3 0H7"></path></svg>点击放大</div>
                             </div>
                         </div>
                         <div class="snap-center shrink-0 w-[85vw] md:w-[700px] aspect-video bg-white rounded-2xl shadow-apple-card flex items-center justify-center cursor-zoom-in relative group border border-apple-border/50 hover:opacity-90" onclick="openLightbox(this)">
-                            <img src="./images/ei6.png" alt="PPT 第 6 页" loading="lazy" decoding="async" class="w-full h-full object-cover">
-                            <div class="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors flex items-center justify-center pointer-events-none">
+                            <div class="absolute inset-0 flex items-center justify-center text-apple-subtext/20 z-0"><svg class="w-8 h-8 animate-spin" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"><circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle><path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path></svg></div>
+                            <img src="./images/ei6.png" alt="PPT 第 6 页" loading="lazy" decoding="async" class="w-full h-full object-cover absolute inset-0 z-10 opacity-0 transition-opacity duration-500" onload="this.classList.remove('opacity-0')">
+                            <div class="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors flex items-center justify-center pointer-events-none z-20">
                                <div class="opacity-0 group-hover:opacity-100 transform translate-y-2 group-hover:translate-y-0 transition-all duration-300 bg-black/60 text-white backdrop-blur-md px-5 py-2.5 rounded-full text-[14px] flex items-center gap-2 font-medium"><svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v3m0 0v3m0-3h3m-3 0H7"></path></svg>点击放大</div>
                             </div>
                         </div>
                         <div class="snap-center shrink-0 w-[85vw] md:w-[700px] aspect-video bg-white rounded-2xl shadow-apple-card flex items-center justify-center cursor-zoom-in relative group border border-apple-border/50 hover:opacity-90" onclick="openLightbox(this)">
-                            <img src="./images/ei7.png" alt="PPT 第 7 页" loading="lazy" decoding="async" class="w-full h-full object-cover">
-                            <div class="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors flex items-center justify-center pointer-events-none">
+                            <div class="absolute inset-0 flex items-center justify-center text-apple-subtext/20 z-0"><svg class="w-8 h-8 animate-spin" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"><circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle><path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path></svg></div>
+                            <img src="./images/ei7.png" alt="PPT 第 7 页" loading="lazy" decoding="async" class="w-full h-full object-cover absolute inset-0 z-10 opacity-0 transition-opacity duration-500" onload="this.classList.remove('opacity-0')">
+                            <div class="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors flex items-center justify-center pointer-events-none z-20">
                                <div class="opacity-0 group-hover:opacity-100 transform translate-y-2 group-hover:translate-y-0 transition-all duration-300 bg-black/60 text-white backdrop-blur-md px-5 py-2.5 rounded-full text-[14px] flex items-center gap-2 font-medium"><svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v3m0 0v3m0-3h3m-3 0H7"></path></svg>点击放大</div>
                             </div>
                         </div>
                         <div class="snap-center shrink-0 w-[85vw] md:w-[700px] aspect-video bg-white rounded-2xl shadow-apple-card flex items-center justify-center cursor-zoom-in relative group border border-apple-border/50 hover:opacity-90" onclick="openLightbox(this)">
-                            <img src="./images/ei8.png" alt="PPT 第 8 页" loading="lazy" decoding="async" class="w-full h-full object-cover">
-                            <div class="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors flex items-center justify-center pointer-events-none">
+                            <div class="absolute inset-0 flex items-center justify-center text-apple-subtext/20 z-0"><svg class="w-8 h-8 animate-spin" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"><circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle><path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path></svg></div>
+                            <img src="./images/ei8.png" alt="PPT 第 8 页" loading="lazy" decoding="async" class="w-full h-full object-cover absolute inset-0 z-10 opacity-0 transition-opacity duration-500" onload="this.classList.remove('opacity-0')">
+                            <div class="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors flex items-center justify-center pointer-events-none z-20">
                                <div class="opacity-0 group-hover:opacity-100 transform translate-y-2 group-hover:translate-y-0 transition-all duration-300 bg-black/60 text-white backdrop-blur-md px-5 py-2.5 rounded-full text-[14px] flex items-center gap-2 font-medium"><svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v3m0 0v3m0-3h3m-3 0H7"></path></svg>点击放大</div>
                             </div>
                         </div>
                     </div>
                     
-                    <button onclick="event.stopPropagation(); scrollCarousel(this, 1)" class="absolute -right-6 top-1/2 -translate-y-1/2 z-20 w-12 h-12 bg-white/90 backdrop-blur shadow-lg rounded-full flex items-center justify-center text-gray-800 opacity-0 group-hover/carousel:opacity-100 transition-all hover:scale-110 hover:bg-white hidden md:flex border border-gray-200">
+                    <button onclick="event.stopPropagation(); scrollCarousel(this, 1)" class="absolute -right-6 top-1/2 -translate-y-1/2 z-30 w-12 h-12 bg-white/90 backdrop-blur shadow-lg rounded-full flex items-center justify-center text-gray-800 opacity-0 group-hover/carousel:opacity-100 transition-all hover:scale-110 hover:bg-white hidden md:flex border border-gray-200">
                         <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
                     </button>
                 </div>
@@ -541,11 +555,16 @@
     </div>
 
     <script>
+        // ★ 高级交互：完美计算并吸附到单张幻灯片的中心位置
         window.scrollCarousel = function(btn, direction) {
             const container = btn.parentElement.querySelector('.overflow-x-auto');
             if (container) {
-                const scrollAmount = container.clientWidth * 0.75;
-                container.scrollBy({ left: direction * scrollAmount, behavior: 'smooth' });
+                const item = container.firstElementChild;
+                if (item) {
+                    const gap = parseFloat(window.getComputedStyle(container).gap) || 0;
+                    const scrollAmount = item.offsetWidth + gap;
+                    container.scrollBy({ left: direction * scrollAmount, behavior: 'smooth' });
+                }
             }
         };
 
@@ -612,6 +631,7 @@
                     { type: 'Research', label: '03 / 用户研究', title: "客群分析与用户分层", desc: "进行深层桌面研究，构建航线客群的基础行为画像与分层模型。", isDark: false, carouselCount: 2 },
                     { type: 'Insight', label: '04 / 洞察分析', title: "需求转化图谱", desc: "将抽象的文化属性与体验诉求，映射为具体的空间需求指标。", isDark: false, image: "cur8.png" },
                     { type: 'Strategy', label: '05 / 设计策略', title: "基于数据的空间叙事", desc: "提出以故事化为核心的内装设计指导策略。", isDark: false, image: "cur6.png" },
+                    { type: 'Solution', label: '06 / 方案展示', title: "体验原型构建", desc: "输出符合目标客群偏好的核心区域体验原型与服务触点设计。", isDark: false, image: "case1-ppt6.jpg" }
                 ]
             },
             'case2': {
@@ -625,7 +645,7 @@
                 title: "《元游》传统文化体验平台",
                 themeColor: "from-blue-50 to-cyan-50",
                 slides: [
-                    { type: 'Cover', label: '01 / 封面', title: "《元游》数字平台", desc: "传统文化体验产品设计 (省级大创项目)", isDark: false, image: "case3-slide1-1.png" },
+                    { type: 'Cover', label: '01 / 封面', title: "《元游》数字平台", desc: "传统文化体验产品设计 (省级大创项目)", isDark: false, carouselCount: 1 },
                     { type: 'Background', label: '02 / 项目背景', title: "文化传承的数字化困境", desc: "解决传统文化在年轻群体中传播力弱、体验形式单一的问题。", isDark: false, carouselCount: 3 },
                     { type: 'Research', label: '03 / 竞品与用户', title: "Z世代体验偏好洞察", desc: "分析现有文创产品痛点，确立“沉浸式+轻游戏化”的方向。", isDark: false, carouselCount: 7 },
                     { type: 'Strategy', label: '04 / 商业模式', title: "商业模式画布设计", desc: "构建以内容共创与线下实体联动为核心的可持续商业闭环。", isDark: false, carouselCount: 1 },
@@ -702,6 +722,9 @@
 
             let htmlString = '';
             
+            // ★ 可复用的优雅 Loading 占位圆圈
+            const spinnerHtml = `<div class="absolute inset-0 flex items-center justify-center text-apple-subtext/20 z-0"><svg class="w-8 h-8 animate-spin" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"><circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle><path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path></svg></div>`;
+            
             data.slides.forEach((slide, index) => {
                 const isDark = slide.isDark;
                 const textClass = isDark ? 'text-white' : 'text-apple-text';
@@ -712,7 +735,7 @@
                 let bgImageUrl = ''; 
 
                 const clickHintHtml = `
-                <div class="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors flex items-center justify-center pointer-events-none">
+                <div class="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors flex items-center justify-center pointer-events-none z-20">
                     <div class="opacity-0 group-hover:opacity-100 transform translate-y-2 group-hover:translate-y-0 transition-all duration-300 bg-black/60 text-white backdrop-blur-md px-5 py-2.5 rounded-full text-[14px] flex items-center gap-2 font-medium">
                         <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v3m0 0v3m0-3h3m-3 0H7"></path></svg>
                         点击放大
@@ -728,14 +751,15 @@
                     for (let i = 0; i < slide.carouselCount; i++) {
                         carouselItems += `
                         <div class="snap-center shrink-0 w-full aspect-video rounded-2xl overflow-hidden relative shadow-2xl ${isDark ? 'bg-[#2C2C2E]' : 'bg-[#F5F5F7] border border-gray-100'} flex items-center justify-center cursor-zoom-in hover:opacity-100 transition-opacity border border-apple-border/20 group" onclick="openLightbox(this)">
-                           <img src="./images/${projectId}-slide${index + 1}-${i + 1}.png" alt="Slide ${index + 1} Image ${i + 1}" loading="lazy" decoding="async" class="absolute inset-0 w-full h-full object-cover bg-white">
+                           ${spinnerHtml}
+                           <img src="./images/${projectId}-slide${index + 1}-${i + 1}.png" alt="Slide ${index + 1} Image ${i + 1}" loading="lazy" decoding="async" class="absolute inset-0 w-full h-full object-cover bg-white z-10 opacity-0 transition-opacity duration-500" onload="this.classList.remove('opacity-0')">
                            ${clickHintHtml}
                         </div>`;
                     }
                     
                     visualHtml = `
                     <div class="w-full md:w-[65%] relative group/carousel">
-                        <button onclick="event.stopPropagation(); scrollCarousel(this, -1)" class="absolute -left-5 top-1/2 -translate-y-1/2 z-20 w-10 h-10 bg-white/90 backdrop-blur shadow-lg rounded-full flex items-center justify-center text-gray-800 opacity-0 group-hover/carousel:opacity-100 transition-all hover:scale-110 hover:bg-white hidden md:flex border border-gray-200">
+                        <button onclick="event.stopPropagation(); scrollCarousel(this, -1)" class="absolute -left-5 top-1/2 -translate-y-1/2 z-30 w-10 h-10 bg-white/90 backdrop-blur shadow-lg rounded-full flex items-center justify-center text-gray-800 opacity-0 group-hover/carousel:opacity-100 transition-all hover:scale-110 hover:bg-white hidden md:flex border border-gray-200">
                             <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path></svg>
                         </button>
 
@@ -743,7 +767,7 @@
                             ${carouselItems}
                         </div>
 
-                        <button onclick="event.stopPropagation(); scrollCarousel(this, 1)" class="absolute -right-5 top-1/2 -translate-y-1/2 z-20 w-10 h-10 bg-white/90 backdrop-blur shadow-lg rounded-full flex items-center justify-center text-gray-800 opacity-0 group-hover/carousel:opacity-100 transition-all hover:scale-110 hover:bg-white hidden md:flex border border-gray-200">
+                        <button onclick="event.stopPropagation(); scrollCarousel(this, 1)" class="absolute -right-5 top-1/2 -translate-y-1/2 z-30 w-10 h-10 bg-white/90 backdrop-blur shadow-lg rounded-full flex items-center justify-center text-gray-800 opacity-0 group-hover/carousel:opacity-100 transition-all hover:scale-110 hover:bg-white hidden md:flex border border-gray-200">
                             <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
                         </button>
 
@@ -757,7 +781,8 @@
                     
                     visualHtml = `
                         <div class="w-full md:w-[65%] aspect-video rounded-2xl overflow-hidden relative shadow-2xl ${isDark ? 'bg-[#2C2C2E]' : 'bg-[#F5F5F7] border border-gray-100'} flex items-center justify-center cursor-zoom-in hover:opacity-100 transition-opacity border border-apple-border/20 group" onclick="openLightbox(this)">
-                             <img src="./images/${slide.image}" alt="PPT" loading="lazy" decoding="async" class="absolute inset-0 w-full h-full object-cover bg-white">
+                             ${spinnerHtml}
+                             <img src="./images/${slide.image}" alt="PPT" loading="lazy" decoding="async" class="absolute inset-0 w-full h-full object-cover bg-white z-10 opacity-0 transition-opacity duration-500" onload="this.classList.remove('opacity-0')">
                              ${clickHintHtml}
                         </div>
                     `;
@@ -768,7 +793,7 @@
                         
                         ${bgImageUrl ? `
                         <div class="absolute inset-0 z-0 pointer-events-none select-none overflow-hidden">
-                            <img src="${bgImageUrl}" loading="lazy" decoding="async" class="w-full h-full object-cover scale-[1.5] blur-[80px] opacity-100 saturate-200 brightness-110">
+                            <img src="${bgImageUrl}" loading="lazy" decoding="async" class="w-full h-full object-cover scale-[1.5] blur-[80px] opacity-0 saturate-200 brightness-110 transition-opacity duration-1000" onload="this.classList.remove('opacity-0'); this.classList.add('opacity-100')">
                             <div class="absolute inset-0 ${isDark ? 'bg-[#1D1D1F]/70' : 'bg-white/50'} backdrop-blur-[30px]"></div>
                         </div>
                         ` : `
